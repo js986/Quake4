@@ -2506,6 +2506,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 	idVec3 muzzleOrigin;
 	idMat3 muzzleAxis;
 	
+	num_attacks *= 1000; // added by js986
 	if ( !viewModel ) {
 		common->Warning( "NULL viewmodel %s\n", __FUNCTION__ );
 		return;

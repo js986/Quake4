@@ -1,0 +1,709 @@
+﻿Build started 2/25/2019 11:37:00 AM.
+     1>Project "C:\Users\jorda\Quake4\Game-Mod-Q4\game.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (../Win32/Debug\) contains files shared from another project (idLib.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D _DEBUG /D _WINDOWS /D GAME_DLL /D Q4SDK /D _WINDLL /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yc /Fp"../Win32/Debug\Game/Game.pch" /Fo"../Win32/Debug\Game/" /Fd"../Win32/Debug\Gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\AF.cpp
+         AF.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\lib.h(120): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(406): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(446): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(501): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(503): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(512): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(514): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(527): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(605): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(615): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(625): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(634): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(643): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\str.h(652): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\idlib\base64.h(80): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_interpreter.h(151): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_interpreter.h(153): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\af.cpp(1152): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\af.cpp(1282): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\af.cpp(1290): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D _DEBUG /D _WINDOWS /D GAME_DLL /D Q4SDK /D _WINDLL /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp"../Win32/Debug\Game/Game.pch" /Fo"../Win32/Debug\Game/" /Fd"../Win32/Debug\Gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\Actor.cpp game\AFEntity.cpp game\BrittleFracture.cpp game\Camera.cpp game\client\ClientAFEntity.cpp game\Effect.cpp game\Entity.cpp game\FreeView.cpp game\Game_Debug.cpp game\Game_local.cpp game\Game_Log.cpp game\Game_network.cpp game\GameEdit.cpp game\Healing_Station.cpp game\Icon.cpp game\IconManager.cpp game\IK.cpp game\Instance.cpp game\Item.cpp game\Light.cpp game\LipSync.cpp game\Misc.cpp game\Moveable.cpp game\Mover.cpp game\MultiplayerGame.cpp game\Playback.cpp game\Player_Cheats.cpp game\Projectile.cpp game\Pvs.cpp game\SecurityCamera.cpp game\Sound.cpp game\SplineMover.cpp game\Target.cpp game\TramGate.cpp game\Trigger.cpp game\WorldSpawn.cpp game\ai\AAS.cpp game\ai\AAS_debug.cpp game\ai\AAS_Find.cpp game\ai\AAS_pathing.cpp game\ai\AAS_routing.cpp game\ai\AAS_tactical.cpp game\ai\AI.cpp game\ai\AI_Actions.cpp game\ai\AI_Announcements.cpp game\ai\AI_Debug.cpp game\ai\AI_events.cpp game\ai\AI_Manager.cpp game\ai\AI_Medic.cpp game\ai\AI_Move.cpp game\ai\AI_pathing.cpp game\ai\AI_States.cpp game\ai\AI_Tactical.cpp game\ai\AI_Util.cpp game\ai\Monster_Berserker.cpp game\ai\Monster_BossBuddy.cpp game\ai\Monster_BossMakron.cpp game\ai\Monster_ConvoyGround.cpp game\ai\Monster_ConvoyHover.cpp game\ai\Monster_FailedTransfer.cpp game\ai\Monster_Fatty.cpp game\ai\Monster_Gladiator.cpp game\ai\Monster_Grunt.cpp game\ai\Monster_Gunner.cpp game\ai\Monster_Harvester.cpp game\ai\Monster_HarvesterDispersal.cpp game\ai\Monster_HeavyHoverTank.cpp game\ai\Monster_IronMaiden.cpp game\ai\Monster_LightTank.cpp game\ai\Monster_NetworkGuardian.cpp game\ai\Monster_RepairBot.cpp game\ai\Monster_Scientist.cpp game\ai\Monster_Sentry.cpp game\ai\Monster_SlimyTransfer.cpp game\ai\Monster_StreamProtector.cpp game\ai\Monster_StroggFlyer.cpp game\ai\Monster_StroggHover.cpp game\ai\Monster_StroggMarine.cpp game\ai\Monster_TeleportDropper.cpp game\ai\Monster_Turret.cpp game\ai\Monster_TurretFlying.cpp game\spawner.cpp game\ai\VehicleAI.cpp game\anim\Anim.cpp game\anim\Anim_Blend.cpp game\anim\Anim_Import.cpp game\anim\Anim_Testmodel.cpp game\client\ClientEffect.cpp game\client\ClientEntity.cpp game\client\ClientModel.cpp game\client\ClientMoveable.cpp game\gamesys\Class.cpp game\gamesys\DebugGraph.cpp game\gamesys\Event.cpp game\gamesys\SaveGame.cpp game\gamesys\State.cpp game\gamesys\SysCmds.cpp game\gamesys\SysCvar.cpp game\physics\Clip.cpp game\physics\Force.cpp game\physics\Force_Constant.cpp game\physics\Force_Drag.cpp game\physics\Force_Field.cpp game\physics\Force_Spring.cpp game\physics\Physics.cpp game\physics\Physics_Actor.cpp game\physics\Physics_AF.cpp game\physics\Physics_Base.cpp game\physics\Physics_Monster.cpp game\physics\Physics_Parametric.cpp game\physics\Physics_Particle.cpp game\physics\Physics_Player.cpp game\physics\Physics_RigidBody.cpp game\physics\Physics_Static.cpp game\physics\Physics_StaticMulti.cpp game\physics\Physics_VehicleMonster.cpp game\physics\Push.cpp game\Player.cpp game\Player_States.cpp game\PlayerView.cpp game\script\Script_Compiler.cpp game\script\Script_Interpreter.cpp game\script\Script_Program.cpp game\script\Script_Thread.cpp game\script\ScriptFuncUtility.cpp game\vehicle\Vehicle.cpp game\vehicle\Vehicle_DropPod.cpp game\vehicle\Vehicle_Walker.cpp game\vehicle\VehicleAnimated.cpp game\vehicle\VehicleController.cpp game\vehicle\VehicleDriver.cpp game\vehicle\VehicleMonster.cpp game\vehicle\VehicleParts.cpp game\vehicle\VehiclePosition.cpp game\vehicle\VehicleRigid.cpp game\vehicle\VehicleSpline.cpp game\vehicle\VehicleStatic.cpp game\Weapon.cpp game\weapon\WeaponBlaster.cpp game\weapon\WeaponDarkMatterGun.cpp game\weapon\WeaponGauntlet.cpp game\weapon\WeaponGrenadeLauncher.cpp game\weapon\WeaponHyperblaster.cpp game\weapon\WeaponLightningGun.cpp game\weapon\WeaponMachinegun.cpp game\weapon\WeaponNailgun.cpp game\weapon\WeaponNapalmGun.cpp game\weapon\WeaponRailgun.cpp game\weapon\WeaponRocketLauncher.cpp game\weapon\WeaponShotgun.cpp game\mp\Buying.cpp game\mp\CTF.cpp game\mp\GameState.cpp game\mp\Tourney.cpp game\mp\VoiceComms.cpp game\mp\stats\StatEvent.cpp game\mp\stats\StatManager.cpp game\mp\stats\StatWindow.cpp
+         Actor.cpp
+         AFEntity.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\afentity.cpp(3103): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         BrittleFracture.cpp
+         Camera.cpp
+         ClientAFEntity.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\client\clientafentity.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Effect.cpp
+         Entity.cpp
+         FreeView.cpp
+         Game_Debug.cpp
+         Game_local.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_local.cpp(3718): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_local.cpp(4857): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_local.cpp(8306): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_local.cpp(8321): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+         Game_Log.cpp
+         Game_network.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_network.cpp(2028): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\game_network.cpp(2286): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+         GameEdit.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gameedit.cpp(336): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         Healing_Station.cpp
+         Icon.cpp
+         IconManager.cpp
+         IK.cpp
+         Instance.cpp
+         Item.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\item.cpp(1631): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         Light.cpp
+         Generating Code...
+         Compiling...
+         LipSync.cpp
+         Misc.cpp
+         Moveable.cpp
+         Mover.cpp
+         MultiplayerGame.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(1552): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(3345): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6619): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6622): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6625): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6628): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6631): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\jorda\quake4\game-mod-q4\game\multiplayergame.cpp(6637): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         Playback.cpp
+         Player_Cheats.cpp
+         Projectile.cpp
+         Pvs.cpp
+         SecurityCamera.cpp
+         Sound.cpp
+         SplineMover.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\splinemover.cpp(1663): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         Target.cpp
+         TramGate.cpp
+         Trigger.cpp
+         WorldSpawn.cpp
+         AAS.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AAS_debug.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas_debug.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AAS_Find.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas_find.cpp(11): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AAS_pathing.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas_pathing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+         Compiling...
+         AAS_routing.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas_routing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AAS_tactical.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\aas_tactical.cpp(52): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Actions.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_actions.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Announcements.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_announcements.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Debug.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_debug.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_events.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_events.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Manager.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_manager.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Medic.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_medic.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Move.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_move.cpp(13): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_pathing.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_pathing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_States.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_states.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Tactical.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_tactical.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         AI_Util.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\ai_util.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Berserker.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_berserker.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_BossBuddy.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_bossbuddy.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_BossMakron.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_bossmakron.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_ConvoyGround.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_convoyground.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_ConvoyHover.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_convoyhover.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_FailedTransfer.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_failedtransfer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+         Compiling...
+         Monster_Fatty.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_fatty.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Gladiator.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_gladiator.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Grunt.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_grunt.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Gunner.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_gunner.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Harvester.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_harvester.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_HarvesterDispersal.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_harvesterdispersal.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_HeavyHoverTank.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_heavyhovertank.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_IronMaiden.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_ironmaiden.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_LightTank.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_lighttank.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_NetworkGuardian.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_networkguardian.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_RepairBot.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_repairbot.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Scientist.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_scientist.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Sentry.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_sentry.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_SlimyTransfer.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_slimytransfer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_StreamProtector.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_streamprotector.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_StroggFlyer.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_stroggflyer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_StroggHover.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_strogghover.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_StroggMarine.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_stroggmarine.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_TeleportDropper.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_teleportdropper.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Monster_Turret.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_turret.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+         Compiling...
+         Monster_TurretFlying.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\monster_turretflying.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         spawner.cpp
+         VehicleAI.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\ai\vehicleai.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Anim.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\anim\anim.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Anim_Blend.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\anim\anim_blend.cpp(6): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Anim_Import.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\anim\anim_import.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Anim_Testmodel.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\anim\anim_testmodel.cpp(24): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         ClientEffect.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\client\clienteffect.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         ClientEntity.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\client\cliententity.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         ClientModel.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\client\clientmodel.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         ClientMoveable.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\client\clientmoveable.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Class.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\class.cpp(8): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         DebugGraph.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\debuggraph.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Event.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(8): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(55): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(97): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(115): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\event.cpp(135): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         SaveGame.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\savegame.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\savegame.cpp(1087): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+         State.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\state.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         SysCmds.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\syscmds.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\syscmds.cpp(814): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\syscmds.cpp(1680): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         SysCvar.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\syscvar.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\gamesys\syscvar.cpp(35): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         Clip.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\clip.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Force.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\force.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+         Compiling...
+         Force_Constant.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\force_constant.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Force_Drag.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\force_drag.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Force_Field.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\force_field.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Force_Spring.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\force_spring.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Actor.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_actor.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_AF.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_af.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Base.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_base.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Monster.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_monster.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Parametric.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_parametric.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Particle.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_particle.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Player.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_player.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_RigidBody.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_rigidbody.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_Static.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_static.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_StaticMulti.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_staticmulti.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Physics_VehicleMonster.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\physics_vehiclemonster.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Push.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\physics\push.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Player.cpp
+         Player_States.cpp
+         PlayerView.cpp
+         Generating Code...
+         Compiling...
+         Script_Compiler.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_compiler.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_compiler.cpp(226): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_compiler.cpp(244): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+         Script_Interpreter.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_interpreter.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_interpreter.cpp(447): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_interpreter.cpp(472): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+         Script_Program.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_program.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_program.cpp(543): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_program.cpp(587): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_program.cpp(631): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_program.cpp(759): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         Script_Thread.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_thread.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_thread.cpp(919): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\script_thread.cpp(935): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+         ScriptFuncUtility.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\script\scriptfuncutility.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Vehicle.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicle.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicle.cpp(1577): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : see declaration of 'sscanf'
+         Vehicle_DropPod.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicle_droppod.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Vehicle_Walker.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicle_walker.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleAnimated.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicleanimated.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleController.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehiclecontroller.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleDriver.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicledriver.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleMonster.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehiclemonster.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleParts.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicleparts.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehiclePosition.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehicleposition.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleRigid.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehiclerigid.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleSpline.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehiclespline.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VehicleStatic.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\vehicle\vehiclestatic.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Weapon.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon.cpp(2329): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         WeaponBlaster.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponblaster.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponDarkMatterGun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weapondarkmattergun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+         Compiling...
+         WeaponGauntlet.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weapongauntlet.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponGrenadeLauncher.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weapongrenadelauncher.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponHyperblaster.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponhyperblaster.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponLightningGun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponlightninggun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponMachinegun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponmachinegun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponNailgun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponnailgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponNapalmGun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponnapalmgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponRailgun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponrailgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponRocketLauncher.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponrocketlauncher.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         WeaponShotgun.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\weapon\weaponshotgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Buying.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\buying.cpp(12): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         CTF.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\ctf.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         GameState.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\gamestate.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Tourney.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\tourney.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         VoiceComms.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\voicecomms.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         StatEvent.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\stats\statevent.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         StatManager.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\stats\statmanager.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\stats\statmanager.cpp(914): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\stats\statmanager.cpp(915): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(174) : see declaration of 'asctime'
+         StatWindow.cpp
+     1>c:\users\jorda\quake4\game-mod-q4\game\mp\stats\statwindow.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
+                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\jorda\Quake4\Game-Mod-Q4\../Win32/Debug\Game.dll) does not match the Linker's OutputFile property value (C:\Users\jorda\Quake4\Win32\Debug\Gamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1188,5): warning MSB8012: TargetName(Game) does not match the Linker's OutputFile property value (Gamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Win32/Debug\Gamex86.dll" /INCREMENTAL /NOLOGO ../Win32/Debug\idLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\game\game.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Win32/Debug\Gamex86.pdb" /STACK:"16000000","16000000" /LARGEADDRESSAWARE /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /FIXED:no /DLL ../Win32/Debug\Game/Actor.obj
+         ../Win32/Debug\Game/AF.obj
+         ../Win32/Debug\Game/AFEntity.obj
+         ../Win32/Debug\Game/BrittleFracture.obj
+         ../Win32/Debug\Game/Camera.obj
+         ../Win32/Debug\Game/ClientAFEntity.obj
+         ../Win32/Debug\Game/Effect.obj
+         ../Win32/Debug\Game/Entity.obj
+         ../Win32/Debug\Game/FreeView.obj
+         ../Win32/Debug\Game/Game_Debug.obj
+         ../Win32/Debug\Game/Game_local.obj
+         ../Win32/Debug\Game/Game_Log.obj
+         ../Win32/Debug\Game/Game_network.obj
+         ../Win32/Debug\Game/GameEdit.obj
+         ../Win32/Debug\Game/Healing_Station.obj
+         ../Win32/Debug\Game/Icon.obj
+         ../Win32/Debug\Game/IconManager.obj
+         ../Win32/Debug\Game/IK.obj
+         ../Win32/Debug\Game/Instance.obj
+         ../Win32/Debug\Game/Item.obj
+         ../Win32/Debug\Game/Light.obj
+         ../Win32/Debug\Game/LipSync.obj
+         ../Win32/Debug\Game/Misc.obj
+         ../Win32/Debug\Game/Moveable.obj
+         ../Win32/Debug\Game/Mover.obj
+         ../Win32/Debug\Game/MultiplayerGame.obj
+         ../Win32/Debug\Game/Playback.obj
+         ../Win32/Debug\Game/Player_Cheats.obj
+         ../Win32/Debug\Game/Projectile.obj
+         ../Win32/Debug\Game/Pvs.obj
+         ../Win32/Debug\Game/SecurityCamera.obj
+         ../Win32/Debug\Game/Sound.obj
+         ../Win32/Debug\Game/SplineMover.obj
+         ../Win32/Debug\Game/Target.obj
+         ../Win32/Debug\Game/TramGate.obj
+         ../Win32/Debug\Game/Trigger.obj
+         ../Win32/Debug\Game/WorldSpawn.obj
+         ../Win32/Debug\Game/AAS.obj
+         ../Win32/Debug\Game/AAS_debug.obj
+         ../Win32/Debug\Game/AAS_Find.obj
+         ../Win32/Debug\Game/AAS_pathing.obj
+         ../Win32/Debug\Game/AAS_routing.obj
+         ../Win32/Debug\Game/AAS_tactical.obj
+         ../Win32/Debug\Game/AI.obj
+         ../Win32/Debug\Game/AI_Actions.obj
+         ../Win32/Debug\Game/AI_Announcements.obj
+         ../Win32/Debug\Game/AI_Debug.obj
+         ../Win32/Debug\Game/AI_events.obj
+         ../Win32/Debug\Game/AI_Manager.obj
+         ../Win32/Debug\Game/AI_Medic.obj
+         ../Win32/Debug\Game/AI_Move.obj
+         ../Win32/Debug\Game/AI_pathing.obj
+         ../Win32/Debug\Game/AI_States.obj
+         ../Win32/Debug\Game/AI_Tactical.obj
+         ../Win32/Debug\Game/AI_Util.obj
+         ../Win32/Debug\Game/Monster_Berserker.obj
+         ../Win32/Debug\Game/Monster_BossBuddy.obj
+         ../Win32/Debug\Game/Monster_BossMakron.obj
+         ../Win32/Debug\Game/Monster_ConvoyGround.obj
+         ../Win32/Debug\Game/Monster_ConvoyHover.obj
+         ../Win32/Debug\Game/Monster_FailedTransfer.obj
+         ../Win32/Debug\Game/Monster_Fatty.obj
+         ../Win32/Debug\Game/Monster_Gladiator.obj
+         ../Win32/Debug\Game/Monster_Grunt.obj
+         ../Win32/Debug\Game/Monster_Gunner.obj
+         ../Win32/Debug\Game/Monster_Harvester.obj
+         ../Win32/Debug\Game/Monster_HarvesterDispersal.obj
+         ../Win32/Debug\Game/Monster_HeavyHoverTank.obj
+         ../Win32/Debug\Game/Monster_IronMaiden.obj
+         ../Win32/Debug\Game/Monster_LightTank.obj
+         ../Win32/Debug\Game/Monster_NetworkGuardian.obj
+         ../Win32/Debug\Game/Monster_RepairBot.obj
+         ../Win32/Debug\Game/Monster_Scientist.obj
+         ../Win32/Debug\Game/Monster_Sentry.obj
+         ../Win32/Debug\Game/Monster_SlimyTransfer.obj
+         ../Win32/Debug\Game/Monster_StreamProtector.obj
+         ../Win32/Debug\Game/Monster_StroggFlyer.obj
+         ../Win32/Debug\Game/Monster_StroggHover.obj
+         ../Win32/Debug\Game/Monster_StroggMarine.obj
+         ../Win32/Debug\Game/Monster_TeleportDropper.obj
+         ../Win32/Debug\Game/Monster_Turret.obj
+         ../Win32/Debug\Game/Monster_TurretFlying.obj
+         ../Win32/Debug\Game/spawner.obj
+         ../Win32/Debug\Game/VehicleAI.obj
+         ../Win32/Debug\Game/Anim.obj
+         ../Win32/Debug\Game/Anim_Blend.obj
+         ../Win32/Debug\Game/Anim_Import.obj
+         ../Win32/Debug\Game/Anim_Testmodel.obj
+         ../Win32/Debug\Game/ClientEffect.obj
+         ../Win32/Debug\Game/ClientEntity.obj
+         ../Win32/Debug\Game/ClientModel.obj
+         ../Win32/Debug\Game/ClientMoveable.obj
+         ../Win32/Debug\Game/Class.obj
+         ../Win32/Debug\Game/DebugGraph.obj
+         ../Win32/Debug\Game/Event.obj
+         ../Win32/Debug\Game/SaveGame.obj
+         ../Win32/Debug\Game/State.obj
+         ../Win32/Debug\Game/SysCmds.obj
+         ../Win32/Debug\Game/SysCvar.obj
+         ../Win32/Debug\Game/Clip.obj
+         ../Win32/Debug\Game/Force.obj
+         ../Win32/Debug\Game/Force_Constant.obj
+         ../Win32/Debug\Game/Force_Drag.obj
+         ../Win32/Debug\Game/Force_Field.obj
+         ../Win32/Debug\Game/Force_Spring.obj
+         ../Win32/Debug\Game/Physics.obj
+         ../Win32/Debug\Game/Physics_Actor.obj
+         ../Win32/Debug\Game/Physics_AF.obj
+         ../Win32/Debug\Game/Physics_Base.obj
+         ../Win32/Debug\Game/Physics_Monster.obj
+         ../Win32/Debug\Game/Physics_Parametric.obj
+         ../Win32/Debug\Game/Physics_Particle.obj
+         ../Win32/Debug\Game/Physics_Player.obj
+         ../Win32/Debug\Game/Physics_RigidBody.obj
+         ../Win32/Debug\Game/Physics_Static.obj
+         ../Win32/Debug\Game/Physics_StaticMulti.obj
+         ../Win32/Debug\Game/Physics_VehicleMonster.obj
+         ../Win32/Debug\Game/Push.obj
+         ../Win32/Debug\Game/Player.obj
+         ../Win32/Debug\Game/Player_States.obj
+         ../Win32/Debug\Game/PlayerView.obj
+         ../Win32/Debug\Game/Script_Compiler.obj
+         ../Win32/Debug\Game/Script_Interpreter.obj
+         ../Win32/Debug\Game/Script_Program.obj
+         ../Win32/Debug\Game/Script_Thread.obj
+         ../Win32/Debug\Game/ScriptFuncUtility.obj
+         ../Win32/Debug\Game/Vehicle.obj
+         ../Win32/Debug\Game/Vehicle_DropPod.obj
+         ../Win32/Debug\Game/Vehicle_Walker.obj
+         ../Win32/Debug\Game/VehicleAnimated.obj
+         ../Win32/Debug\Game/VehicleController.obj
+         ../Win32/Debug\Game/VehicleDriver.obj
+         ../Win32/Debug\Game/VehicleMonster.obj
+         ../Win32/Debug\Game/VehicleParts.obj
+         ../Win32/Debug\Game/VehiclePosition.obj
+         ../Win32/Debug\Game/VehicleRigid.obj
+         ../Win32/Debug\Game/VehicleSpline.obj
+         ../Win32/Debug\Game/VehicleStatic.obj
+         ../Win32/Debug\Game/Weapon.obj
+         ../Win32/Debug\Game/WeaponBlaster.obj
+         ../Win32/Debug\Game/WeaponDarkMatterGun.obj
+         ../Win32/Debug\Game/WeaponGauntlet.obj
+         ../Win32/Debug\Game/WeaponGrenadeLauncher.obj
+         ../Win32/Debug\Game/WeaponHyperblaster.obj
+         ../Win32/Debug\Game/WeaponLightningGun.obj
+         ../Win32/Debug\Game/WeaponMachinegun.obj
+         ../Win32/Debug\Game/WeaponNailgun.obj
+         ../Win32/Debug\Game/WeaponNapalmGun.obj
+         ../Win32/Debug\Game/WeaponRailgun.obj
+         ../Win32/Debug\Game/WeaponRocketLauncher.obj
+         ../Win32/Debug\Game/WeaponShotgun.obj
+         ../Win32/Debug\Game/Buying.obj
+         ../Win32/Debug\Game/CTF.obj
+         ../Win32/Debug\Game/GameState.obj
+         ../Win32/Debug\Game/Tourney.obj
+         ../Win32/Debug\Game/VoiceComms.obj
+         ../Win32/Debug\Game/StatEvent.obj
+         ../Win32/Debug\Game/StatManager.obj
+         ../Win32/Debug\Game/StatWindow.obj
+         C:\Users\jorda\Quake4\Win32\Debug\idLib.lib
+     1>Actor.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+            Creating library ../Win32/Debug\Gamex86.lib and object ../Win32/Debug\Gamex86.exp
+         game.vcxproj -> C:\Users\jorda\Quake4\Game-Mod-Q4\../Win32/Debug\Game.dll
+     1>Done Building Project "C:\Users\jorda\Quake4\Game-Mod-Q4\game.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:26.92
