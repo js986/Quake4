@@ -4,6 +4,10 @@
 #include "../Game_local.h"
 #include "../Weapon.h"
 
+#ifndef __GAME_PROJECTILE_H__
+#include "../Projectile.h"
+#endif
+
 class rvWeaponGrenadeLauncher : public rvWeapon {
 public:
 

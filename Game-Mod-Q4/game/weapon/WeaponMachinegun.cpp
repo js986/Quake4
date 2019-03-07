@@ -227,7 +227,7 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			if ( wsfl.zoom ) {
-				owner->StartPowerUpEffect(POWERUP_INVISIBILITY); // added by js986
+				//owner->StartPowerUpEffect(POWERUP_INVISIBILITY); // added by js986
 				gameLocal.Printf("THE MOD IS WORKING!!!"); // added by js986
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 				Attack ( true, 1, spreadZoom, 0, 1.0f );

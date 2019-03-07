@@ -1,10 +1,10 @@
-﻿Build started 2/26/2019 10:15:00 AM.
+﻿Build started 3/5/2019 6:28:08 PM.
      1>Project "C:\Users\jorda\Quake4\Game-Mod-Q4\game.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (../Win32/Release\) contains files shared from another project (idLib.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D Q4SDK /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp"../Win32/Release\Game/Game.pch" /Fo"../Win32/Release\Game/" /Fd"../Win32/Release\Gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\weapon\WeaponMachinegun.cpp
-         WeaponMachinegun.cpp
-     1>game\weapon\WeaponMachinegun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D Q4SDK /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp"../Win32/Release\Game/Game.pch" /Fo"../Win32/Release\Game/" /Fd"../Win32/Release\Gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\weapon\WeaponRocketLauncher.cpp
+         WeaponRocketLauncher.cpp
+     1>game\weapon\WeaponRocketLauncher.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
                  Add directive to 'precompiled header (.h) file' or rebuild precompiled header
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\jorda\Quake4\Game-Mod-Q4\../Win32/Release\Game.dll) does not match the Linker's OutputFile property value (C:\Users\jorda\Quake4\Win32\Release\Gamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1188,5): warning MSB8012: TargetName(Game) does not match the Linker's OutputFile property value (Gamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
@@ -175,4 +175,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.36
+Time Elapsed 00:00:03.94

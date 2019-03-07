@@ -2506,7 +2506,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 	idVec3 muzzleOrigin;
 	idMat3 muzzleAxis;
 	
-	num_attacks *= 1000; // added by js986
+	//num_attacks *= 1000; // added by js986
 	if ( !viewModel ) {
 		common->Warning( "NULL viewmodel %s\n", __FUNCTION__ );
 		return;
@@ -2598,6 +2598,9 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
+			gameLocal.Printf("dict: %f", dict); //js986
+			gameLocal.Printf("muzzleOrigin: %f", muzzleOrigin); //js986
+			gameLocal.Printf("muzzleAxis: %f", muzzleAxis); //js986
 		}
 		//asalmon:  changed to keep stats even in single player 
 		statManager->WeaponFired( owner, weaponIndex, num_attacks );
