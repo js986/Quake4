@@ -1,0 +1,7 @@
+MySound {
+minDistance 2
+maxDistance 15
+volume 0
+
+1812_Overture.wav
+}

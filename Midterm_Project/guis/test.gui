@@ -1,0 +1,64 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	backcolor	0,0,0,1
+	visible	1
+	windowDef blue_left
+	{
+		rect	0,0,320,480
+		visible	1
+		background	"gfx/guis/common/strogg/doorgui_bg"
+		matcolor	0,1,1,1
+	}
+	windowDef blue_right
+	{
+		rect	320,0,320,480
+		visible	1
+		background	"gfx/guis/common/strogg/doorgui_bg"
+		matcolor	0,1,1,1
+		matscalex	-1
+	}
+	windowDef left_edge
+	{
+		rect	2,10,86,269
+		visible	1
+		background	"gfx/guis/common/strogg/doorgui_edge"
+		matcolor	0,1,1,1
+	}
+	windowDef right_edge
+	{
+		rect	551,12,89,267
+		visible	1
+		background	"gfx/guis/common/strogg/doorgui_edge"
+		matcolor	0,1,1,1
+		matscalex	-1
+	}
+	windowDef decal
+	{
+		rect	248,-2,170,135
+		visible	1
+		background	"gfx/guis/common/strogg/decal"
+		matcolor	0.501,1,1,1
+	}
+	windowDef edge_fade
+	{
+		rect	-1,12,640,480
+		visible	1
+		background	"gfx/guis/common/monitor_darkedge2"
+		matcolor	0,0,0,1
+	}
+	windowDef text_window
+	{
+		rect	109,208,424,331
+		visible	1
+		forecolor	1,1,1,1
+		text	"Spawning\nArea"
+		textscale	1.5
+		textalign	1
+
+		onAction {
+			set "cmd" "play guisound_beep2";
+		}
+
+	}
+}
