@@ -652,6 +652,11 @@ void rvWeapon::Spawn ( void ) {
  	hideStartTime		= gameLocal.time - hideTime;
  	muzzleOffset		= weaponDef->dict.GetFloat ( "muzzleOffset", "14" );
 
+	// Experience
+	exp = 0;
+	total_exp = 1000;
+	level = 0;
+
 	// Ammo
 	clipSize			= spawnArgs.GetInt( "clipSize" );
 	ammoRequired		= spawnArgs.GetInt( "ammoRequired" );

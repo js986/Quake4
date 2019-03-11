@@ -360,6 +360,11 @@ public:
 	idVec3							muzzleFlashViewOffset;
 	bool							flashlightOn;
 	idVec3							flashlightViewOffset;	
+	
+	// experience
+	int								exp; // amount of exp on a weapon
+	int								total_exp; // amount of exp to level up
+	int								level; // level of weapon
 
 	// ammo management
 	int								ammoType;
