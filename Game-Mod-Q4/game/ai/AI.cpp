@@ -1156,7 +1156,11 @@ void idAI::Think( void ) {
 		// clear out the enemy when he dies or is hidden
 		idEntity* enemyEnt = enemy.ent;
 		idActor*  enemyAct = dynamic_cast<idActor*>( enemyEnt );
-		
+		//const idDict* ammoDict;
+		//ammoDict = gameLocal.FindEntityDefDict(spawnArgs.GetString(va("ammo_machinegun")));
+		//idEntity* item;
+		//gameLocal.SpawnEntityDef(*ammoDict, &item); // added by js986
+
 		// Clear our enemy if necessary
 		if ( enemyEnt ) {
 			if (enemyAct && enemyAct->IsInVehicle()) {
@@ -1165,6 +1169,7 @@ void idAI::Think( void ) {
 				bool enemyDead = (enemyEnt->fl.takedamage && enemyEnt->health <= 0);
 				if ( enemyDead || enemyEnt->fl.notarget || enemyEnt->IsHidden() || (enemyAct && enemyAct->team == team)) {
 					ClearEnemy ( enemyDead );
+					//gameLocal.SpawnEntityDef(*ammoDict, &item); // added by js986
 				}
 			}
 		}
@@ -3684,7 +3689,7 @@ void idAI::OnDeath( void ){
 
 	ExecScriptFunction( funcs.death );
 
-/* DONT DROP ANYTHING FOR NOW
+// DONT DROP ANYTHING FOR NOW
 	float rVal = gameLocal.random.RandomInt( 100 );
 
 	if( spawnArgs.GetFloat( "no_drops" ) >= 1.0 ){
@@ -3697,7 +3702,7 @@ void idAI::OnDeath( void ){
 			spawnArgs.Set( "def_dropsItem1", "item_health_small" );
 		}
 	}
-*/
+
 }
 
 /*

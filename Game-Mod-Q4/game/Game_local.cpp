@@ -1046,6 +1046,27 @@ void idGameLocal::DPrintf( const char *fmt, ... ) const {
 
 /*
 ============
+idGameLocal::PrintMessage
+============
+*/
+
+void idGameLocal::PrintMessage(int to, const char* msg) {
+	if (idStr::Length(msg) >= MAX_PRINT_LEN) {
+		common->Warning("idMultiplayerGame::PrintMessage() - Not transmitting message of length %d", idStr::Length(msg));
+		return;
+	}
+	idBitMsg outMsg;
+	byte msgBuf[1024];
+	outMsg.Init(msgBuf, sizeof(msgBuf));
+	outMsg.WriteByte(GAME_RELIABLE_MESSAGE_PRINT);
+	outMsg.WriteString(msg);
+	networkSystem->ServerSendReliableMessage(to, outMsg);
+
+
+}
+
+/*
+============
 idGameLocal::Warning
 ============
 */

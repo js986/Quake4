@@ -3,35 +3,11 @@ windowDef Desktop
 	rect	0,0,640,480
 	visible	1
 	backcolor	0,0,0,1
-	windowDef topleft_weapon1
+	windowDef weapon_hud
 	{
-		rect	15,14,55,25
+		rect	0,0,225,96
 		visible	1
-		background	"gfx/guis/hud/s_arbar"
+		background	"gfx/guis/hud/backbar"
 		matcolor	1,1,1,1
-	}
-	windowDef topleft_weapon2
-	{
-		rect	66,14,55,25
-		visible	1
-		background	"gfx/guis/hud/s_arbar"
-		matcolor	1,1,1,1
-		matscalex	-1
-	}
-	windowDef topleft_weapon3
-	{
-		rect	106,23,125,15
-		visible	1
-		background	"gfx/guis/hud/s_arbar"
-		matcolor	1,1,1,1
-		matscalex	-1
-	}
-	windowDef topleft_weapon4
-	{
-		rect	187,24,55,15
-		visible	1
-		background	"gfx/guis/hud/s_arbar"
-		matcolor	1,1,1,1
-		matscalex	-1
 	}
 }

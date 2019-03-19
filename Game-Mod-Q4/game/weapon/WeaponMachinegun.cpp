@@ -3,6 +3,7 @@
 
 #include "../Game_local.h"
 #include "../Weapon.h"
+#include "../MultiplayerGame.h"
 
 class rvWeaponMachinegun : public rvWeapon {
 public:
@@ -22,6 +23,13 @@ protected:
 
 	float				spreadZoom;
 	bool				fireHeld;
+
+	//Weapon Experience
+	int					exp = 0;
+	int					total_exp = 1000;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 
 	bool				UpdateFlashlight	( void );
 	void				Flashlight			( bool on );
@@ -230,12 +238,29 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 				//owner->StartPowerUpEffect(POWERUP_INVISIBILITY); // added by js986
 				gameLocal.Printf("THE MOD IS WORKING!!!"); // added by js986
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( true, 1, spreadZoom, 0, 1.0f );
+				Attack ( true, num_attacks, spreadZoom, 0, pow );
+				exp += 5;
+				if (exp >= total_exp) {
+					level++;
+					total_exp = total_exp * 2;
+					num_attacks = num_attacks + 2;
+					pow += 1.0f;
+					//common->DPrintf("The Rocket Laucncher has reached level %d", level);
+					gameLocal.mpGame.PrintMessage(1, "The Machine Gun has reached level ");
+				}
 				fireHeld = true;
 			} else {
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( false, 1, spread, 0, 1.0f );
-				gameLocal.Printf("AHHHHHHH"); // added by js986
+				Attack ( false, num_attacks, spread, 0, pow );
+				exp += 50; // the following was added by js986
+				if (exp >= total_exp) {
+					level++;
+					total_exp = total_exp * 2;
+					num_attacks = num_attacks + 2;
+					pow += 1.0f;
+					//common->DPrintf("The Rocket Laucncher has reached level %d", level);
+					gameLocal.mpGame.PrintMessage(1, "The Machine Gun has reached level ");
+				}
 			}
 			PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );	
 			return SRESULT_STAGE ( STAGE_WAIT );

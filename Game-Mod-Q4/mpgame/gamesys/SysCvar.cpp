@@ -151,7 +151,7 @@ idCVar hud_inputPosition(			"hud_inputPosition",		"580 90",		CVAR_GAME | CVAR_AR
 idCVar hud_inputColor(				"hud_inputColor",			"1 0 0",		CVAR_GAME | CVAR_ARCHIVE, "Input display color (r g b, range 0 to 1)");
 	
 // change anytime vars
-idCVar developer(					"developer",				"0",			CVAR_GAME | CVAR_BOOL, "" );
+idCVar developer(					"developer",				"1",			CVAR_GAME | CVAR_BOOL, "" ); //changed 0 to 1 by js986
 
 idCVar g_forceModel(				"g_forceModel",				"",			CVAR_GAME | CVAR_ARCHIVE, "Locally forces all players to this model in non-team gameplay modes.  See g_forceStroggModel, g_forceMarineModel.  listModels to list available models", idCmdSystem::ArgCompletion_ForceModel );
 idCVar g_forceStroggModel(			"g_forceStroggModel",		"",			CVAR_GAME | CVAR_ARCHIVE, "Locally forces Strogg team players to this model in team gameplay modes.  See g_forceModel.  listModels to list available models", idCmdSystem::ArgCompletion_ForceModelStrogg );

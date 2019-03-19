@@ -653,9 +653,9 @@ void rvWeapon::Spawn ( void ) {
  	muzzleOffset		= weaponDef->dict.GetFloat ( "muzzleOffset", "14" );
 
 	// Experience
-	exp = 0;
-	total_exp = 1000;
-	level = 0;
+	exp;
+	total_exp;
+	level;
 
 	// Ammo
 	clipSize			= spawnArgs.GetInt( "clipSize" );
@@ -2603,9 +2603,9 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
-			gameLocal.Printf("dict: %f", dict); //js986
-			gameLocal.Printf("muzzleOrigin: %f", muzzleOrigin); //js986
-			gameLocal.Printf("muzzleAxis: %f", muzzleAxis); //js986
+			//gameLocal.Printf("dict: %f", dict); //js986
+			//gameLocal.Printf("muzzleOrigin: %f", muzzleOrigin); //js986
+			//gameLocal.Printf("muzzleAxis: %f", muzzleAxis); //js986
 		}
 		//asalmon:  changed to keep stats even in single player 
 		statManager->WeaponFired( owner, weaponIndex, num_attacks );

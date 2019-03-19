@@ -6028,10 +6028,10 @@ void idMultiplayerGame::MessageMode( const idCmdArgs &args ) {
 	const char *mode;
 	int imode;
 
-	if ( !gameLocal.isMultiplayer ) {
-		common->Printf( "clientMessageMode: only valid in multiplayer\n" );
-		return;
-	}
+	//if ( !gameLocal.isMultiplayer ) {
+		//common->Printf( "clientMessageMode: only valid in multiplayer\n" ); js986
+		//return;
+	//}
 	if ( !mainGui ) {
 		common->Printf( "no local client\n" );
 		return;

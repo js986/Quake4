@@ -110,6 +110,9 @@ protected:
 	int						ieMaxPitch;
 	float					ieSlicePercentage;
 
+// Mr. Zurkon
+	idStr					zurkon;
+
 // RAVEN BEGIN
 // ddynerman: hit count for stats
 	int						hitCount;

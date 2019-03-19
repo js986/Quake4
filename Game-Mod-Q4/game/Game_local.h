@@ -598,6 +598,7 @@ public:
 
 	void					Printf( const char *fmt, ... ) const;
 	void					DPrintf( const char *fmt, ... ) const;
+	void					PrintMessage(int to, const char* msg); // added by js986
 	void					Warning( const char *fmt, ... ) const;
 	void					DWarning( const char *fmt, ... ) const;
 	void					Error( const char *fmt, ... ) const;
