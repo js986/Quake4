@@ -18,6 +18,8 @@ AI.cpp
 #include "../spawner.h"
 #include "AI_Tactical.h"
 
+#include "../../idlib/containers/List.h"
+
 const char* aiTalkMessageString [ ] = {
 	"None",
 	"primary",
@@ -3691,15 +3693,25 @@ void idAI::OnDeath( void ){
 
 // DONT DROP ANYTHING FOR NOW
 	float rVal = gameLocal.random.RandomInt( 100 );
-
+	idList<const char *> ammo;
+	ammo.Append("ammo_machinegun");
+	ammo.Append("ammo_shotgun");
+	ammo.Append("ammo_nailgun");
+	ammo.Append("ammo_railgun");
+	ammo.Append("ammo_rocketlauncher");
+	ammo.Append("ammo_grenadelauncher");
+	ammo.Append("ammo_hyperblaster");
+	ammo.Append("ammo_lightninggun");
+	ammo.Append("ammo_dmg");
 	if( spawnArgs.GetFloat( "no_drops" ) >= 1.0 ){
 		spawnArgs.Set( "def_dropsItem1", "" );
 	}else{
 		// Fixme!  Better guys should drop better stuffs!  Make drops related to guy type?  Do something cooler here?
 		if( rVal < 25 ){	// Half of guys drop nothing?
-			spawnArgs.Set( "def_dropsItem1", "" );
+			spawnArgs.Set( "def_dropsItem1", "item_armor_shard" );
 		}else if( rVal < 50 ){
-			spawnArgs.Set( "def_dropsItem1", "item_health_small" );
+			//spawnArgs.Set( "def_dropsItem1", "item_health_small" );
+			spawnArgs.Set("def_dropsAmmo1", ammo[gameLocal.random.RandomInt(4)]);
 		}
 	}
 

@@ -2603,9 +2603,6 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
-			//gameLocal.Printf("dict: %f", dict); //js986
-			//gameLocal.Printf("muzzleOrigin: %f", muzzleOrigin); //js986
-			//gameLocal.Printf("muzzleAxis: %f", muzzleAxis); //js986
 		}
 		//asalmon:  changed to keep stats even in single player 
 		statManager->WeaponFired( owner, weaponIndex, num_attacks );
@@ -2719,9 +2716,8 @@ void rvWeapon::LaunchProjectiles ( idDict& dict, const idVec3& muzzleOrigin, con
 // RAVEN END
 			muzzle_pos = tr.endpos;
 		}
-		
 		// Launch the actual projectile
-		proj->Launch( muzzle_pos + startOffset, dir, pushVelocity, fuseOffset, power );
+			proj->Launch(muzzle_pos + startOffset, dir, pushVelocity, fuseOffset, power);
 		
 		// Increment the projectile launch count and let the derived classes
 		// mess with it if they want.

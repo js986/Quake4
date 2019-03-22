@@ -21,6 +21,12 @@ public:
 
 protected:
 	int						hitscans;
+	//Weapon Experience
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 
 private:
 
@@ -165,6 +171,32 @@ stateResult_t rvWeaponShotgun::State_Fire( const stateParms_t& parms ) {
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			Attack( false, hitscans, spread, 0, 1.0f );
+			exp += 100; // the following was added by js986
+			if (exp >= total_exp) {
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Shotgun has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Shotgun has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Shotgun has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Shotgun has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 			PlayAnim( ANIMCHANNEL_ALL, "fire", 0 );	
 			return SRESULT_STAGE( STAGE_WAIT );
 	

@@ -54,6 +54,11 @@ windowDef Desktop
 		set "powerups::visible" "1" ;	
 	}
 
+	onNamedEvent Message {
+		transition "message1a::forecolor" "0 0 0 1" "0 0 0 0" "5000" "1" "0";
+		transition "message1::forecolor" "1 1 1 1" "1 1 1 0" "5000" "1" "0";
+	}
+
 	onNamedEvent updateHealth {
 		if ( "gui::mp" == 0 )
 		{
@@ -2134,5 +2139,21 @@ windowDef Desktop
 			set "p_exit_level::visible" "0";
 		}
 
+	}
+	windowDef message1a 
+	{
+      		rect 21, 266, 638, 10
+      		forecolor 0, 0, 0, 0
+      		text "gui::message"
+      		textscale 0.30
+      		font "fonts/marine"
+	}
+	windowDef message1 
+	{
+      	rect 20, 265, 638, 10
+      	forecolor 1, 1, 1, 0
+      	text "gui::message"
+      	textscale 0.30
+      	font "fonts/marine"
 	}
 }

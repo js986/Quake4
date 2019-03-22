@@ -87,7 +87,7 @@ entityDef weapon_grenadelauncher
 	"inv_name"					"#str_107403"	
 
 	"weaponname"				"Grenade Launcher"
-	"def_projectile"			"projectile_grenade_homing"
+	"def_projectile"			"projectile_grenade"
 	"ammoType"					"ammo_grenadelauncher"
 	"clipSize"					"8"
 	"ammoRequired"				"1"
@@ -252,7 +252,7 @@ entityDef projectile_grenade
 	"angular_friction"			"0"
 	"contact_friction"			"10"
 	"bounce"					".65"
-	"gravity"					"0.5" //was 1
+	"gravity"					"1" 
 	"fuse"						"2.5"
 								
 	"detonate_on_fuse"			"1"
@@ -280,7 +280,7 @@ entityDef projectile_grenade
 	"fx_impact_rock_mp"			"effects/weapons/rocketlauncher/impact_mp.fx"
 	"fx_impact_water"			"effects/ambient/splash_med.fx"
 
-	"friendly_impact"			"0" //was 1
+	"friendly_impact"			"1" 
 
 	"snd_ricochet"				"grenade_bounce"	
 
@@ -341,46 +341,3 @@ entityDef damage_grenadeSplash_mp
 
 
 
-entityDef projectile_grenade_homing {
-	"inherit"		"projectile_grenade"
-	"spawnclass"	"idGuidedProjectile"
-	"random"		"450 450 450"
-	
-	"turn_max"		"360"
-	"clamp_dist"	"10000"
-}
-
-{
-	"editor_color"				".3 .3 1"
-	"editor_mins"				"-16 -16 0"
-	"editor_maxs"				"16 16 32"
-	"editor_menu"				"pickup"
-	"editor_usage"				"GrenadeLauncher homing grenade modification"
-
-	"spawnclass"				"idItem"
-	"size"						"32 32 32"
-	"inv_weaponmod"				"wpmod_grenade_homing"
-	"inv_ammo_rocketlauncher"	"10"
-	"inv_item"					"1"
-	"inv_icon"					"gfx/guis/hud/icons/item_grenade.tga"
-	"inv_name"					"#str_107403"
-	"model"						"models/items/ammo/ammo_box.lwo"
-
-	"net_syncPhysics"			"1"
-}
-
-entityDef wpmod_grenadelauncher_homing {
-	"weapon"			"weapon_grenadelauncher"
-	
-	"def_projectile"	"projectile_grenade_homing"
-	
-	"fx_guide"			"effects/weapons/grenadelauncher/guide.fx"
-	"zoomFov"			"90"
-	
-	"lockRange"		"10000"
-	"lockSlowdown"		".25"
-	"lockAccelTime"	".5"
-	
-	"clipSize"			"8"
-	"FireRate"			".5"	
-}

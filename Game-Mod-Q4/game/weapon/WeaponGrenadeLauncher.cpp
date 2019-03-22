@@ -8,6 +8,7 @@
 #include "../Projectile.h"
 #endif
 
+#include "../ai/AI_Tactical.h"
 class rvWeaponGrenadeLauncher : public rvWeapon {
 public:
 
@@ -18,6 +19,13 @@ public:
 	virtual void			Spawn				( void );
 	void					PreSave				( void );
 	void					PostSave			( void );
+//Weapon Experience
+protected:
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 
 #ifdef _XENON
 	virtual bool		AllowAutoAim			( void ) const { return false; }
@@ -146,10 +154,42 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+	const idDeclEntityDef* mr_zurkon = gameLocal.FindEntityDef("ai_tactical",false);
+	idEntity* ent;
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			Attack ( false, 1, spread, 0, 1.0f );
+			//Attack ( false, num_attacks, spread, 0, pow );
+			if (mr_zurkon && (owner == gameLocal.GetLocalPlayer())) {
+				gameLocal.SpawnEntityDef(mr_zurkon->dict, &ent);
+				gameLocal.Printf("SHOULD SPAWN SOMETHING");
+			}
+			exp += 100; // the following was added by js986
+			if (exp >= total_exp) {
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Grenade Launcher has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Grenade Launcher has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Grenade Launcher has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Grenade Launcher has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 			PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 0 );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	

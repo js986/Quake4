@@ -4,6 +4,11 @@
 #include "../Game_local.h"
 #include "../Weapon.h"
 
+#include "../Projectile.h"
+#include "../ai/AI.h"
+#include "../client/ClientEffect.h"
+#include "../AF.h"
+
 class rvWeaponGauntlet : public rvWeapon {
 public:
 
@@ -26,6 +31,15 @@ protected:
 	jointHandle_t		bladeJoint;
 	jointHandle_t		bladeJoint_world;
 	int					bladeAccel;
+	//bomb glove
+	//const idDeclEntityDef* bomb = gameLocal.FindEntityDef("projectile_grenade", false);
+	//idEntity* b;
+	idPlayer* player = gameLocal.GetLocalPlayer();
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 	
 	float				range;
 	
@@ -206,6 +220,27 @@ rvWeaponGauntlet::Attack
 ================
 */
 void rvWeaponGauntlet::Attack ( void ) {
+	const idDeclEntityDef* bomb = gameLocal.FindEntityDef("projectile_grenade", false);
+	idEntity* b;
+	if (bomb && (owner == gameLocal.GetLocalPlayer())) {
+		gameLocal.SpawnEntityDef(bomb->dict, &b);
+		//gameLocal.Printf("Found Grenade");
+		idProjectile* proj = static_cast<idProjectile *> (b);
+		idVec3 muzzleOrigin = playerViewOrigin;
+		idVec3 startOffset;
+		idVec3 dir;
+		idVec3 dirOffset;
+		float ang = (float)DEG2RAD(180.0f) * gameLocal.random.RandomFloat();
+		float spin = (float)DEG2RAD(360.0f) * gameLocal.random.RandomFloat();
+		spawnArgs.GetVector("dirOffset", "0 0 0", dirOffset);
+		spawnArgs.GetVector("startOffset", "0 0 0", startOffset);
+		dir = playerViewAxis[0] + playerViewAxis[2] * (ang * idMath::Sin(spin)) - playerViewAxis[1] * (ang * idMath::Cos(spin));
+		dir += dirOffset;
+		proj->Create(owner, muzzleOrigin - startOffset, dir, NULL);
+		proj->Launch(muzzleOrigin, dir, vec3_zero, 0.0f, pow);
+	}
+	nextAttackTime = gameLocal.time + 10;
+	/*
 	trace_t		tr;
 	idEntity*	ent;
 	
@@ -300,6 +335,7 @@ void rvWeaponGauntlet::Attack ( void ) {
 		}
 		nextAttackTime = gameLocal.time + fireRate;
 	}
+	*/
 }
 
 /*
@@ -468,12 +504,41 @@ stateResult_t rvWeaponGauntlet::State_Fire ( const stateParms_t& parms ) {
 		STAGE_LOOP_WAIT,
 		STAGE_END,
 		STAGE_END_WAIT
+
 	};	
+
 	switch ( parms.stage ) {
+
 		case STAGE_START:	
-			PlayAnim ( ANIMCHANNEL_ALL, "attack_start", parms.blendFrames );
-			StartBlade ( );
-			loopSound = LOOP_NONE;
+			//PlayAnim ( ANIMCHANNEL_ALL, "attack_start", parms.blendFrames );
+			//StartBlade ( );
+			//loopSound = LOOP_NONE;
+			Attack();
+			exp += 100; // the following was added by js986
+			if (exp >= total_exp) {
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Bomb Glove has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Bomb Glove has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Bomb Glove has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Bomb Glove has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 			return SRESULT_STAGE(STAGE_START_WAIT);
 		
 		case STAGE_START_WAIT:
@@ -487,20 +552,23 @@ stateResult_t rvWeaponGauntlet::State_Fire ( const stateParms_t& parms ) {
 			
 		case STAGE_LOOP:
 			PlayCycle ( ANIMCHANNEL_ALL, "attack_loop", parms.blendFrames );
-			StartSound( "snd_spin_loop", SND_CHANNEL_WEAPON, 0, false, 0 );
+			//StartSound( "snd_spin_loop", SND_CHANNEL_WEAPON, 0, false, 0 );
 			return SRESULT_STAGE(STAGE_LOOP_WAIT);
 			
 		case STAGE_LOOP_WAIT:
+			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier(PMOD_FIRERATE));
 			if ( !wsfl.attack || wsfl.lowerWeapon ) {
 				return SRESULT_STAGE ( STAGE_END );
 			}
-			Attack ( );
+			//Attack ( );
+
+
 			return SRESULT_WAIT;
 		
 		case STAGE_END:
 			PlayAnim ( ANIMCHANNEL_ALL, "attack_end", parms.blendFrames );
 			StopBlade ( );
-			StartSound( "snd_spin_down", SND_CHANNEL_WEAPON, 0, false, 0 );
+			//StartSound( "snd_spin_down", SND_CHANNEL_WEAPON, 0, false, 0 );
 			return SRESULT_STAGE ( STAGE_END_WAIT );
 		
 		case STAGE_END_WAIT:

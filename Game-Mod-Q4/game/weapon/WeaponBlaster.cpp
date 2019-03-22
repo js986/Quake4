@@ -25,6 +25,14 @@ protected:
 	bool				UpdateFlashlight	( void );
 	void				Flashlight			( bool on );
 
+	//Weapon Experience
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
+	bool				fireHeld;
+
 private:
 
 	int					chargeTime;
@@ -148,7 +156,6 @@ rvWeaponBlaster::Spawn
 void rvWeaponBlaster::Spawn ( void ) {
 	viewModel->SetShaderParm ( BLASTER_SPARM_CHARGEGLOW, 0 );
 	SetState ( "Raise", 0 );
-	
 	chargeGlow   = spawnArgs.GetVec2 ( "chargeGlow" );
 	chargeTime   = SEC2MS ( spawnArgs.GetFloat ( "chargeTime" ) );
 	chargeDelay  = SEC2MS ( spawnArgs.GetFloat ( "chargeDelay" ) );
@@ -320,6 +327,7 @@ stateResult_t rvWeaponBlaster::State_Idle ( const stateParms_t& parms ) {
 				return SRESULT_DONE;
 			}
 			return SRESULT_WAIT;
+
 	}
 	return SRESULT_ERROR;
 }
@@ -367,6 +375,7 @@ stateResult_t rvWeaponBlaster::State_Charge ( const stateParms_t& parms ) {
 rvWeaponBlaster::State_Charged
 ================
 */
+		
 stateResult_t rvWeaponBlaster::State_Charged ( const stateParms_t& parms ) {
 	enum {
 		CHARGED_INIT,
@@ -427,13 +436,67 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 
 	
 			if ( gameLocal.time - fireHeldTime > chargeTime ) {	
-				Attack ( true, 1, spread, 0, 1.0f );
+				Attack ( true, num_attacks, spread, 0, pow );
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
-				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
+				//PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames ); 
+				PlayAnim(ANIMCHANNEL_ALL, "chargedfire", 0);
+				exp += 50;
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (exp >= total_exp && level <= 5) {
+					level++;
+					total_exp = total_exp * 2;
+					num_attacks = num_attacks + 2;
+					pow += 1.0f;
+					if (player && player->hud){
+						if (level == 5) {
+							player->hud->SetStateString("message", "The Blaster has reached Max Level");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 2) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 2");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 3) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 3");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 4) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 4");
+							player->hud->HandleNamedEvent("Message");
+						}
+					}
+				}
 			} else {
-				Attack ( false, 1, spread, 0, 1.0f );
+				Attack ( false, num_attacks, spread, 0, pow );
 				PlayEffect ( "fx_normalflash", barrelJointView, false );
-				PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
+				//PlayAnim( ANIMCHANNEL_ALL, "fire", parms.blendFrames );
+				PlayAnim(ANIMCHANNEL_ALL, "fire", 0);
+
+				exp += 25;
+				if (exp >= total_exp && level != 5) {
+					level++;
+					total_exp = total_exp * 2;
+					num_attacks = num_attacks + 2;
+					pow += 1.0f;
+					if (player && player->hud){
+						if (level == 5) {
+							player->hud->SetStateString("message", "The Blaster has reached Max Level");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 2) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 2");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 3) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 3");
+							player->hud->HandleNamedEvent("Message");
+						}
+						else if (level == 4) {
+							player->hud->SetStateString("message", "The Blaster has reached Level 4");
+							player->hud->HandleNamedEvent("Message");
+						}
+					}
+				}
 			}
 			fireHeldTime = 0;
 			

@@ -319,7 +319,7 @@ void idProjectile::FreeLightDef( void ) {
 idProjectile::Launch
 =================
 */
-void idProjectile::Launch( const idVec3 &start, const idVec3 &dir, const idVec3 &pushVelocity, const float timeSinceFire, const float dmgPower ) {
+void idProjectile::Launch( const idVec3 &start, const idVec3 &dir, const idVec3 &pushVelocity, const float timeSinceFire, const float dmgPower, idStr marine ) {
 	float			fuse;
 	idVec3			velocity;
 	float			linear_friction;
@@ -333,6 +333,8 @@ void idProjectile::Launch( const idVec3 &start, const idVec3 &dir, const idVec3 
 	idVec3			tmp;
 	int				contents;
  	int				clipMask;
+
+	zurkon = marine;
 
  	// allow characters to throw projectiles during cinematics, but not the player
  	if ( owner.GetEntity() && !owner.GetEntity()->IsType( idPlayer::GetClassType() ) ) {
@@ -510,6 +512,29 @@ void idProjectile::Launch( const idVec3 &start, const idVec3 &dir, const idVec3 
 		PostEventMS( &EV_Remove, 0 );
 	}
 }
+/*
+================
+idProjectile::SpawnZurkon
+================
+*/
+void idProjectile::SpawnZurkon() {
+	idDict robot;
+	idEntity* temp;
+	robot.Set("classname", zurkon.c_str());
+	robot.Set("origin", (physicsObj.GetOrigin()).ToString());
+	robot.SetFloat("angle", (physicsObj.GetAxis()).ToString()[YAW]);
+	robot.Set("name", "Mr.Zurkon");
+	//robot.Set("def_head", "char_marinehead_helmet");
+	//robot.Set("def_persona", "persona_badger");
+	//robot.Set("skin", "skins/models/characters/marine/badger");
+	gameLocal.SpawnEntityDef("char_marine_base",&robot);
+	if (!gameLocal.SpawnEntityDef(zurkon.c_str(), &robot))
+		gameLocal.Printf("Spawn Failed");
+}
+
+
+
+
 
 /*
 ================
@@ -635,6 +660,8 @@ bool idProjectile::Collide( const trace_t &collision, const idVec3 &velocity, bo
  	bool		canDamage;
  	
  	hitTeleporter = false;
+	//if (collision.c.material)
+		//SpawnZurkon();
 
 	if ( state == EXPLODED || state == FIZZLED ) {
 		return true;

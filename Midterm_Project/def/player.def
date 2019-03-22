@@ -683,6 +683,10 @@ entityDef player_marine
 	"weapon10_best"						"0"
 	"weapon10_cycle"					"1"	
 
+	"def_weapon11"						"weapon_gauntlet" //js986
+	"weapon11_best"						"0" //js986
+	"weapon11_cycle"					"1" //js986
+
 	"mtr_wound"						"textures/decals/hurt02"
 	"mtr_splat"						"textures/decals/dsplat2"
 	"mtr_splat2"						"textures/decals/dsplat5"

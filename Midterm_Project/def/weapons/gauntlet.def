@@ -137,7 +137,7 @@ entityDef weapon_gauntlet
 	"blade_accel"				".25"
 
 	"def_damage"				"damage_gauntlet"
-	"fx_impact"					"effects/weapons/gauntlet/impact.fx"
+	"fx_impact"					"effects/weapons/dmg/core.fx" //"effects/weapons/gauntlet/impact.fx"
 	"fx_impact_flesh"			"effects/weapons/gauntlet/impact_flesh.fx"
 	"fx_impact_monstermetal"	"effects/weapons/gauntlet/impact_monstermetal.fx"
 	"range"						"48"

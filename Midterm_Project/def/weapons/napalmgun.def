@@ -291,7 +291,7 @@ entityDef projectile_napalm
 	
 	// These are the impact effects and the detonation effects.
 	//"fx_detonate"				"effects/weapons/napalmgun/detonate.fx"
-	//"fx_impact"				"effects/weapons/napalmgun/areaburn"
+	"fx_impact"				"effects/weapons/napalmgun/areaburn"
 	//"fx_impact_actor"			"effects/weapons/napalmgun/actorimpact"
 	
 	"fx_impact_actor"			"effects/weapons/rocketlauncher/detonate.fx"

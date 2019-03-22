@@ -4841,6 +4841,7 @@ bool idGameLocal::SpawnEntityDef( const idDict &args, idEntity **ent, bool setDe
 
 	if ( spawnArgs.GetBool( "nospawn" ) )
 	{//not meant to actually spawn, just there for some compiling process
+		Printf("Something is wrong");
 		return false;
 	}
 
@@ -4959,6 +4960,7 @@ idEntity* idGameLocal::SpawnEntityDef( const char* entityDefName, const idDict* 
 
 	entityDict = FindEntityDefDict( entityDefName, false );
 	if( !entityDict ) {
+		Printf("Could not Find Entity");
 		return NULL;
 	}
 

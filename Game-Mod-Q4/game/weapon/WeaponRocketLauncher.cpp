@@ -450,7 +450,7 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
-	int num_attacks = 1;
+	int num_attacks = 9;
 	float pow = 1.0f;
 	switch ( parms.stage ) {
 		case STAGE_INIT:
@@ -462,13 +462,29 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 				total_exp = total_exp * 2;
 				num_attacks = num_attacks + 2;
 				pow += 1.0f;
-				//common->DPrintf("The Rocket Laucncher has reached level %d", level);
-				//gameLocal.mpGame.PrintMessage(-1,"The Rocket Launcher has reached level");
-				owner->hud->SetStateString("message", common->GetLocalizedString("#str_107441"));
-				owner->hud->HandleNamedEvent("Message");
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The RYNO has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The RYNO has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The RYNO has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The RYNO has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
 			}
 			//js986
 			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
+			//PlayAnim(ANIMCHANNEL_LEGS, "fire", parms.blendFrames); //js986
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
 		case STAGE_WAIT:			
