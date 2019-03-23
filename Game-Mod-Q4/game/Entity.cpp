@@ -3647,7 +3647,18 @@ void idEntity::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 	if ( !attacker ) {
 		attacker = gameLocal.world;
 	}
-
+	//js986
+	idStr defname = damageDefName;
+	idStr npd = "damage_napalmDirect";
+	idStr nps = "damage_napalmSplash";
+	idStr npge = "damage_napalmGlobEmit";
+	if (defname == npd && this == gameLocal.GetLocalPlayer())
+		return;
+	if (defname == nps && this == gameLocal.GetLocalPlayer())
+		return;
+	if (defname == npge && this == gameLocal.GetLocalPlayer())
+		return;
+	// this ends js986
 	const idDict *damageDef = gameLocal.FindEntityDefDict( damageDefName, false );
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'\n", damageDefName );

@@ -23,7 +23,6 @@ public:
 	virtual void			Spawn				( void );
 	virtual void			Think				( void );
 	virtual void			MuzzleRise			( idVec3 &origin, idMat3 &axis );
-
 	virtual void			SpectatorCycle		( void );
 
 	void					Save( idSaveGame *saveFile ) const;
@@ -32,7 +31,14 @@ public:
 protected:
 
 	void					UpdateCylinders(void);
-	
+	void					Attack(void);
+	//Experience
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
+
 	typedef enum {CYLINDER_RESET_POSITION,CYLINDER_MOVE_POSITION, CYLINDER_UPDATE_POSITION } CylinderState;
 	CylinderState								cylinderState;
 
@@ -228,6 +234,75 @@ void WeaponNapalmGun::Restore( idRestoreGame *saveFile ) {
 }
 
 /*
+=====================
+WeaponNapalmGun::Attack 
+added by js986
+=====================
+*/
+void WeaponNapalmGun::Attack(void) {
+	const idDeclEntityDef* napalm = gameLocal.FindEntityDef("projectile_napalm", false);
+	idEntity* n;
+	idPlayer* player = gameLocal.GetLocalPlayer();
+	if (!gameLocal.isClient) {
+		// check if we're out of ammo or the clip is empty
+		int ammoAvail = owner->inventory.HasAmmo(ammoType, ammoRequired);
+		if (!ammoAvail || ((clipSize != 0) && (ammoClip <= 0))) {
+			return;
+		}
+		owner->inventory.UseAmmo(ammoType, ammoRequired);
+		if (clipSize && ammoRequired) {
+			clipPredictTime = gameLocal.time;	// mp client: we predict this. mark time so we're not confused by snapshots
+			ammoClip -= 1;
+		}
+
+		// wake up nearby monsters
+		if (!wfl.silent_fire) {
+			gameLocal.AlertAI(owner);
+		}
+	}
+	if (napalm && (owner == player)){
+			gameLocal.SpawnEntityDef(napalm->dict, &n);
+			idProjectile* fireball = static_cast<idProjectile*>(n);
+			float num = 1.0f;
+			idVec3 start;
+			idMat3 axis;
+			idVec3 dir;
+			idVec3 dirOffset;
+			idVec3 startOffset;
+			//idVec3 x(num, 0.0f, 0.0f);
+			if (barrelJointView != INVALID_JOINT && spawnArgs.GetBool("launchFromBarrel")) {
+				GetGlobalJointTransform(true, barrelJointView, start, axis);
+			}
+			else {
+				start = playerViewOrigin;
+				axis = playerViewAxis;
+				start += playerViewAxis[0] * muzzleOffset;
+			}
+			float spreadRad = (num*DEG2RAD(spread));
+			float ang = idMath::Sin(spreadRad * gameLocal.random.RandomFloat());
+			float spin = (float)DEG2RAD(360.0f) * gameLocal.random.RandomFloat();
+			spawnArgs.GetVector("dirOffset", "0 0 0", dirOffset);
+			spawnArgs.GetVector("startOffset", "0 0 0", startOffset);
+			dir = playerViewAxis[0] + playerViewAxis[2] * (ang * idMath::Sin(spin)) - playerViewAxis[1] * (ang * idMath::Cos(spin));
+			dir += dirOffset;
+			// Inform the gui of the ammo change
+			viewModel->PostGUIEvent("weapon_ammo");
+			if (ammoClip == 0 && AmmoAvailable() == 0) {
+				viewModel->PostGUIEvent("weapon_noammo");
+			}
+			fireball->Create(player, start + startOffset, dir, NULL);
+			fireball->Launch(start, dir, player->weapon->pushVelocity, 0.0f, pow);
+			num += 1.0f;
+			statManager->WeaponFired(owner, weaponIndex, num_attacks);
+
+		}
+		//gameLocal.Printf("Spawn Hype!!");
+
+	
+
+}
+
+/*
 ===============================================================================
 
 	States 
@@ -389,19 +464,24 @@ WeaponNapalmGun::State_Fire
 stateResult_t WeaponNapalmGun::State_Fire( const stateParms_t& parms ) {
 	enum {
 		STAGE_INIT,
+		STAGE_ATTACKLOOP,
 		STAGE_WAIT,
 	};	
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			if ( wsfl.zoom ) {
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( true, 1, spread, 0, 1.0f );
+				//Attack ( true, 1, spread, 0, 1.0f );
+
 				PlayAnim ( ANIMCHANNEL_ALL, "idle", parms.blendFrames );
 				//fireHeld = true;
 			} else {
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( false, 1, spread, 0, 1.0f );
+				//if (!wsfl.attack || wsfl.lowerWeapon)
+					//SRESULT_STAGE(STAGE_WAIT);
+				//Attack (  );
 
+				
 				int animNum = viewModel->GetAnimator()->GetAnim ( "fire" );
 				if ( animNum ) {
 					idAnim* anim;
@@ -413,7 +493,40 @@ stateResult_t WeaponNapalmGun::State_Fire( const stateParms_t& parms ) {
 			}
 
 			previousAmmo = AmmoInClip();
-			return SRESULT_STAGE ( STAGE_WAIT );
+			//return SRESULT_WAIT;
+			//return SRESULT_STAGE ( STAGE_ATTACKLOOP );
+		case STAGE_ATTACKLOOP:
+			if (!wsfl.attack || wsfl.lowerWeapon || !AmmoAvailable()) {
+				return SRESULT_STAGE(STAGE_WAIT);
+			}
+			Attack();
+			exp += 0.5; // the following was added by js986
+			if (exp >= total_exp) {
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				level++;
+				total_exp = total_exp * 3;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Pyrocitor has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Pyrocitor has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Pyrocitor has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Pyrocitor has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
+			return SRESULT_WAIT;
 	
 		case STAGE_WAIT:			
 			if ( AnimDone ( ANIMCHANNEL_ALL, 0 ) ) {

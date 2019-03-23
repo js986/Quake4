@@ -290,6 +290,15 @@ entityDef projectile_grenade
 	"fx_teleport"			"effects/mp/item_teleport.fx"
 }
 
+entityDef projectile_grenade_homing
+{
+	"inherit"					"projectile_grenade"
+	"spawnclass"				"idGuidedProjectile"
+	"speed"						"700"
+	"turn_max"					"1800"
+	"turn_accel"				".5"
+	"clamp_dist"				"1001"
+}
 //--------------------------------------------------------------------------------------------------------------------
 // Damage
 //--------------------------------------------------------------------------------------------------------------------

@@ -126,6 +126,7 @@ entityDef weapon_shotgun
   	"fx_muzzleflash"			"effects/weapons/shotgun/muzzleflash.fx"		
   	"fx_muzzleflash_world"			"effects/weapons/shotgun/muzzleflash_world.fx"		
 	"fx_respawn"				"effects/mp/itemrespawn.fx"
+	"fx_shake"					"effects/weapons/shotgun/shake.fx"
 
 	"def_viewStyle"				"viewStyle_q3_shotgun"
 	"def_viewStyle1"			"viewStyle_shouldered_shotgun"
