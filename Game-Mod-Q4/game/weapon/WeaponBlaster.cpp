@@ -26,12 +26,12 @@ protected:
 	void				Flashlight			( bool on );
 
 	//Weapon Experience
-	int					exp = 0;
-	int					total_exp = 1500;
-	int					level = 1;
-	int					num_attacks = 1;
-	float				pow = 1.0f;
-	bool				fireHeld;
+	int					exp;
+	int					total_exp;
+	int					level;
+	int					num_attacks;
+	float				pow;
+	//bool				fireHeld;
 
 private:
 
@@ -159,7 +159,11 @@ void rvWeaponBlaster::Spawn ( void ) {
 	chargeGlow   = spawnArgs.GetVec2 ( "chargeGlow" );
 	chargeTime   = SEC2MS ( spawnArgs.GetFloat ( "chargeTime" ) );
 	chargeDelay  = SEC2MS ( spawnArgs.GetFloat ( "chargeDelay" ) );
-
+	exp = 0;
+	total_exp = 1000;
+	level = 1;
+	num_attacks = 1;
+	pow = 1.0f;
 	fireHeldTime		= 0;
 	fireForced			= false;
 			
@@ -177,6 +181,11 @@ void rvWeaponBlaster::Save ( idSaveGame *savefile ) const {
 	savefile->WriteVec2 ( chargeGlow );
 	savefile->WriteBool ( fireForced );
 	savefile->WriteInt ( fireHeldTime );
+	savefile->WriteInt(level);
+	savefile->WriteFloat(pow);
+	savefile->WriteInt(total_exp);
+	savefile->WriteInt(exp);
+	savefile->WriteInt(num_attacks);
 }
 
 /*
@@ -190,6 +199,11 @@ void rvWeaponBlaster::Restore ( idRestoreGame *savefile ) {
 	savefile->ReadVec2 ( chargeGlow );
 	savefile->ReadBool ( fireForced );
 	savefile->ReadInt ( fireHeldTime );
+	savefile->ReadInt(level);
+	savefile->ReadFloat(pow);
+	savefile->ReadInt(total_exp);
+	savefile->ReadInt(exp);
+	savefile->ReadInt(num_attacks);
 }
 
 /*
@@ -397,7 +411,7 @@ stateResult_t rvWeaponBlaster::State_Charged ( const stateParms_t& parms ) {
 				return SRESULT_DONE;
 			}
 			return SRESULT_WAIT;
-	}
+	} 
 	return SRESULT_ERROR;
 }
 

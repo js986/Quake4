@@ -653,9 +653,9 @@ void rvWeapon::Spawn ( void ) {
  	muzzleOffset		= weaponDef->dict.GetFloat ( "muzzleOffset", "14" );
 
 	// Experience
-	exp;
-	total_exp;
-	level;
+	//exp;
+	//total_exp;
+	//level;
 
 	// Ammo
 	clipSize			= spawnArgs.GetInt( "clipSize" );

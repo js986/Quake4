@@ -3696,10 +3696,10 @@ void idAI::OnDeath( void ){
 	idList<const char *> ammo;
 	ammo.Append("ammo_machinegun");
 	ammo.Append("ammo_shotgun");
-	ammo.Append("ammo_nailgun");
+	ammo.Append("ammo_grenadelauncher");
 	ammo.Append("ammo_railgun");
 	ammo.Append("ammo_rocketlauncher");
-	ammo.Append("ammo_grenadelauncher");
+	ammo.Append("ammo_nailgun");
 	ammo.Append("ammo_hyperblaster");
 	ammo.Append("ammo_lightninggun");
 	ammo.Append("ammo_dmg");
@@ -3711,7 +3711,10 @@ void idAI::OnDeath( void ){
 			spawnArgs.Set( "def_dropsItem1", "item_armor_shard" );
 		}else if( rVal < 50 ){
 			//spawnArgs.Set( "def_dropsItem1", "item_health_small" );
-			spawnArgs.Set("def_dropsAmmo1", ammo[gameLocal.random.RandomInt(4)]);
+			spawnArgs.Set("def_dropsItem1", ammo[gameLocal.random.RandomInt(4)]);
+		}
+		else if (rVal < 60){
+			spawnArgs.Set("def_dropItem1", "item_health_small");
 		}
 	}
 

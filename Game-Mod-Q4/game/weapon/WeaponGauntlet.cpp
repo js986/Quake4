@@ -222,6 +222,7 @@ rvWeaponGauntlet::Attack
 void rvWeaponGauntlet::Attack ( void ) {
 	const idDeclEntityDef* bomb = gameLocal.FindEntityDef("projectile_grenade", false);
 	idEntity* b;
+	trace_t		tr;
 	if (bomb && (owner == gameLocal.GetLocalPlayer())) {
 		gameLocal.SpawnEntityDef(bomb->dict, &b);
 		//gameLocal.Printf("Found Grenade");
@@ -230,14 +231,15 @@ void rvWeaponGauntlet::Attack ( void ) {
 		idVec3 startOffset;
 		idVec3 dir;
 		idVec3 dirOffset;
-		float ang = (float)DEG2RAD(180.0f) * gameLocal.random.RandomFloat();
+		float spreadRad = DEG2RAD(spread);
+		float ang = idMath::Sin(spreadRad * gameLocal.random.RandomFloat());
 		float spin = (float)DEG2RAD(360.0f) * gameLocal.random.RandomFloat();
 		spawnArgs.GetVector("dirOffset", "0 0 0", dirOffset);
 		spawnArgs.GetVector("startOffset", "0 0 0", startOffset);
 		dir = playerViewAxis[0] + playerViewAxis[2] * (ang * idMath::Sin(spin)) - playerViewAxis[1] * (ang * idMath::Cos(spin));
 		dir += dirOffset;
-		proj->Create(owner, muzzleOrigin - startOffset, dir, NULL);
-		proj->Launch(muzzleOrigin, dir, vec3_zero, 0.0f, pow);
+		proj->Create(owner, muzzleOrigin + startOffset, dir, NULL);
+		proj->Launch(muzzleOrigin, dir, owner->weapon->pushVelocity, 0.0f, pow);
 	}
 	nextAttackTime = gameLocal.time + 10;
 	/*

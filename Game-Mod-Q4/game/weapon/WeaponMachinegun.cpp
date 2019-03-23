@@ -25,11 +25,11 @@ protected:
 	bool				fireHeld;
 
 	//Weapon Experience
-	int					exp = 0;
-	int					total_exp = 1500;
-	int					level = 1;
-	int					num_attacks = 1;
-	float				pow = 1.0f;
+	int					exp;
+	int					total_exp;
+	int					level;
+	int					num_attacks;
+	float				pow;
 
 	bool				UpdateFlashlight	( void );
 	void				Flashlight			( bool on );
@@ -63,7 +63,11 @@ rvWeaponMachinegun::Spawn
 void rvWeaponMachinegun::Spawn ( void ) {
 	spreadZoom = spawnArgs.GetFloat ( "spreadZoom" );
 	fireHeld   = false;
-		
+	exp = 0;
+	total_exp = 1000;
+	level = 1;
+	num_attacks = 1;
+	pow = 1.0f;
 	SetState ( "Raise", 0 );	
 	
 	Flashlight ( owner->IsFlashlightOn() );
@@ -77,6 +81,11 @@ rvWeaponMachinegun::Save
 void rvWeaponMachinegun::Save ( idSaveGame *savefile ) const {
 	savefile->WriteFloat ( spreadZoom );
 	savefile->WriteBool ( fireHeld );
+	savefile->WriteInt ( level );
+	savefile->WriteFloat( pow );
+	savefile->WriteInt( total_exp );
+	savefile->WriteInt( exp );
+	savefile->WriteInt(num_attacks);
 }
 
 /*
@@ -87,6 +96,11 @@ rvWeaponMachinegun::Restore
 void rvWeaponMachinegun::Restore ( idRestoreGame *savefile ) {
 	savefile->ReadFloat ( spreadZoom );
 	savefile->ReadBool ( fireHeld );
+	savefile->ReadInt(level);
+	savefile->ReadFloat(pow);
+	savefile->ReadInt(total_exp);
+	savefile->ReadInt(exp);
+	savefile->ReadInt(num_attacks);
 }
 
 /*

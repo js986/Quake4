@@ -9,6 +9,7 @@
 #endif
 
 #include "../ai/AI_Tactical.h"
+#include "../ai/AI.h"
 class rvWeaponGrenadeLauncher : public rvWeapon {
 public:
 
@@ -154,15 +155,21 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
-	const idDeclEntityDef* mr_zurkon = gameLocal.FindEntityDef("ai_tactical",false);
+	//const idDeclEntityDef* mr_zurkon = gameLocal.FindEntityDef("ai_tactical",false);
+	const idDeclEntityDef* mr_zurkon = gameLocal.FindEntityDef("weapon_machinegun", false);
 	idEntity* ent;
+	idItem* zu;
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			//Attack ( false, num_attacks, spread, 0, pow );
 			if (mr_zurkon && (owner == gameLocal.GetLocalPlayer())) {
-				gameLocal.SpawnEntityDef(mr_zurkon->dict, &ent);
+				gameLocal.SpawnEntityDef(mr_zurkon->dict, &ent,false);
 				gameLocal.Printf("SHOULD SPAWN SOMETHING");
+				//ent->SetName("Mr.Zurkon");
+				//ent->Spawn();
+				zu = static_cast<idItem*>(ent);
+				zu->Spawn();
 			}
 			exp += 100; // the following was added by js986
 			if (exp >= total_exp) {
