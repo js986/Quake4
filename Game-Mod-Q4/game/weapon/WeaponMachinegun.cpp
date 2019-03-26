@@ -64,7 +64,7 @@ void rvWeaponMachinegun::Spawn ( void ) {
 	spreadZoom = spawnArgs.GetFloat ( "spreadZoom" );
 	fireHeld   = false;
 	exp = 0;
-	total_exp = 1000;
+	total_exp = 1500;
 	level = 1;
 	num_attacks = 1;
 	pow = 1.0f;

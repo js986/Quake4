@@ -98,7 +98,7 @@ entityDef weapon_railgun
 
 	"ammoType"				"ammo_railgun"
 	"ammoRequired"				"1"
-	"clipSize"				"3"
+	"clipSize"				"6" //was 3
 	"lowAmmo"				"1"
 	"continuousFire"			"1"
 	"dryFireReload" 			"1"

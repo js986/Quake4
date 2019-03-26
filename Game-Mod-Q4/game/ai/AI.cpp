@@ -3711,7 +3711,7 @@ void idAI::OnDeath( void ){
 			spawnArgs.Set( "def_dropsItem1", "item_armor_shard" );
 		}else if( rVal < 50 ){
 			//spawnArgs.Set( "def_dropsItem1", "item_health_small" );
-			spawnArgs.Set("def_dropsItem1", ammo[gameLocal.random.RandomInt(4)]);
+			spawnArgs.Set("def_dropsItem1", ammo[gameLocal.random.RandomInt(7)]);
 		}
 		else if (rVal < 60){
 			spawnArgs.Set("def_dropItem1", "item_health_small");

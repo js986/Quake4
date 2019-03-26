@@ -73,7 +73,12 @@ protected:
 	// Chain lightning mod
 	idList<rvLightningPath>				chainLightning;
 	idVec3								chainLightningRange;
-
+	//Experience
+	int					exp = 0;
+	int					total_exp = 1000;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 private:
 
 	void				Attack					( idEntity* ent, const idVec3& dir, float power = 1.0f );
@@ -318,8 +323,60 @@ void rvWeaponLightningGun::Think ( void ) {
 		
 		nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 		Attack ( currentPath.target, dir, power );
+		exp += 50; // the following was added by js986
+		if (exp >= total_exp) {
+			level++;
+			total_exp = total_exp * 2;
+			num_attacks = num_attacks + 2;
+			power += 1.0f;
+			idPlayer* player = gameLocal.GetLocalPlayer();
+			if (player && player->hud){
+				if (level == 5) {
+					player->hud->SetStateString("message", "The Lightning Gun has reached Max Level");
+					player->hud->HandleNamedEvent("Message");
+				}
+				else if (level == 2) {
+					player->hud->SetStateString("message", "The Lightning Gun has reached Level 2");
+					player->hud->HandleNamedEvent("Message");
+				}
+				else if (level == 3) {
+					player->hud->SetStateString("message", "The Lightning Gun has reached Level 3");
+					player->hud->HandleNamedEvent("Message");
+				}
+				else if (level == 4) {
+					player->hud->SetStateString("message", "The Lightning Gun has reached Level 4");
+					player->hud->HandleNamedEvent("Message");
+				}
+			}
+		}
 		for ( i = 0; i < chainLightning.Num(); i ++, power *= 0.75f ) {
 			Attack ( chainLightning[i].target, chainLightning[i].normal, power );
+			exp += 50; // the following was added by js986
+			if (exp >= total_exp) {
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				power += 1.0f;
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Lightning Gun has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Lightning Gun has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Lightning Gun has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Lightning Gun has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 		}
 
 		statManager->WeaponFired( owner, owner->GetCurrentWeapon(), chainLightning.Num() + 1 );

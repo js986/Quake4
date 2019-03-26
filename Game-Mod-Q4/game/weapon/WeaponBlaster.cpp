@@ -26,11 +26,11 @@ protected:
 	void				Flashlight(bool on);
 
 	//Weapon Experience
-	int					exp;
-	int					total_exp;
-	int					level;
-	int					num_attacks;
-	float				pow;
+	int					exp = 0;
+	int					total_exp = 1000;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 	//bool				fireHeld;
 
 private:
@@ -162,11 +162,6 @@ void rvWeaponBlaster::Spawn(void) {
 	chargeGlow = spawnArgs.GetVec2("chargeGlow");
 	chargeTime = SEC2MS(spawnArgs.GetFloat("chargeTime"));
 	chargeDelay = SEC2MS(spawnArgs.GetFloat("chargeDelay"));
-	exp = 0;
-	total_exp = 1000;
-	level = 1;
-	num_attacks = 1;
-	pow = 1.0f;
 	fireHeldTime = 0;
 	fireForced = false;
 

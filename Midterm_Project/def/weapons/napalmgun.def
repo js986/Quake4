@@ -367,7 +367,7 @@ entityDef impact_napalm_projectile
 
 entityDef damage_napalmDirect 
 {
-	"damage"					"7" //was 70
+	"damage"					"3" //was 70
 	"gib"						"1"
 	"knockback"					"60"
 	"deathPush"					"200"

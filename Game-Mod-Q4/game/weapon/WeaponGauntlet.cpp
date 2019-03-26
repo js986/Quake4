@@ -137,6 +137,11 @@ void rvWeaponGauntlet::Save ( idSaveGame *savefile ) const {
 	savefile->WriteObject ( impactEffect );
 	savefile->WriteInt ( impactMaterial );
 	savefile->WriteInt ( loopSound );
+	savefile->WriteInt(exp);
+	savefile->WriteInt(level);
+	savefile->WriteInt(total_exp);
+	savefile->WriteInt(num_attacks);
+	savefile->WriteFloat(pow);
 }
 
 /*
@@ -157,6 +162,11 @@ void rvWeaponGauntlet::Restore ( idRestoreGame *savefile ) {
 	savefile->ReadObject ( reinterpret_cast<idClass*&>( impactEffect ) );
 	savefile->ReadInt ( impactMaterial );
 	savefile->ReadInt ( loopSound );
+	savefile->ReadInt(exp);
+	savefile->ReadInt(level);
+	savefile->ReadInt(total_exp);
+	savefile->ReadInt(num_attacks);
+	savefile->ReadFloat(pow);
 }
 
 /*

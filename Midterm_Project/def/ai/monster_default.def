@@ -164,6 +164,7 @@ entityDef monster_default {
 	"eye_focus_rate"							"0.5"
 	"head_focus_rate"							"0.1"
 	"passive"									"0"
+	"type"										"monster"
 	"fov"										"170"
 	"fx_teleport"								"fx/teleporter.fx"
 	"fx_teleport1"								"fx/teleporter1.fx"

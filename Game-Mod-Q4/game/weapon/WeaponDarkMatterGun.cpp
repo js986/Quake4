@@ -50,6 +50,13 @@ protected:
 	void				StartRings		( bool chargeUp );
 	void				StopRings		( void );
 
+	//Weapon Experience
+	int					exp = 0;
+	int					total_exp = 1000;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
+
 private:
 
 	stateResult_t		State_Idle		( const stateParms_t& parms );
@@ -314,7 +321,33 @@ stateResult_t rvWeaponDarkMatterGun::State_Fire ( const stateParms_t& parms ) {
 			StopRings ( );
 
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			Attack ( false, 1, spread, 0, 1.0f );
+			Attack ( false, num_attacks, spread, 0, pow );
+			exp += 100; // the following was added by js986
+			if (exp >= total_exp) {
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The DMG has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The DMG has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The DMG has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The DMG has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 			PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
