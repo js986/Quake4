@@ -232,11 +232,13 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+	int semiauto = 0;
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			SpinUp ( );
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			Attack ( false, num_attacks, spread, 0, pow );
+			semiauto++;
 			exp += 20; // the following was added by js986
 			if (exp >= total_exp) {
 				level++;
@@ -273,6 +275,11 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 	
 		case STAGE_WAIT:		
 			if ( wsfl.attack && gameLocal.time >= nextAttackTime && AmmoInClip() && !wsfl.lowerWeapon ) {
+				if (semiauto > 3){
+					semiauto = 0;
+					SetState("Idle", 0);
+					return SRESULT_DONE;
+				}
 				SetState ( "Fire", 0 );
 				return SRESULT_DONE;
 			}

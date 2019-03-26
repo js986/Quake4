@@ -1,6 +1,7 @@
 # Quake4 Ratchet and Clank Mod
 Mod for Quake 4 that changes the weapons to weapons from the Ratchet and Clank series <br />
 Weapon Modifications:<br />
+Blster -> Automatic Blaster<br />
 Shotgun ->  Blitz Gun<br />
 Grenade Launcher -> Bouncer<br />
 Nailgun -> Holoshield Launcher<br />

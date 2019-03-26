@@ -234,7 +234,7 @@ entityDef weaponmod_lightninggun_chain
 model weapon_lightninggun_view
 {
 	mesh						models/weapons/lightning_gun/mesh.md5mesh
-	anim idle 					models/weapons/lightning_gun/shoot_start.md5anim	//models/weapons/lightning_gun/idle.md5anim
+	anim idle 					models/weapons/lightning_gun/idle.md5anim
 	anim putaway				models/weapons/lightning_gun/lower.md5anim
 	anim raise					models/weapons/lightning_gun/raise.md5anim
 	anim shoot_start			models/weapons/lightning_gun/shoot_start.md5anim

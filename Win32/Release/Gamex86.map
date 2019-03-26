@@ -1,6 +1,6 @@
  Gamex86
 
- Timestamp is 5c999997 (Mon Mar 25 23:16:39 2019)
+ Timestamp is 5c9a6d08 (Tue Mar 26 14:18:48 2019)
 
  Preferred load address is 20000000
 
@@ -9062,22 +9062,22 @@
  0001:0024dcf0       ?State_Lower@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024ecf0 f   WeaponBlaster.obj
  0001:0024dd80       ?State_Idle@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024ed80 f   WeaponBlaster.obj
  0001:0024de10       ?State_Charge@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024ee10 f   WeaponBlaster.obj
- 0001:0024df70       ?State_Charged@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024ef70 f   WeaponBlaster.obj
- 0001:0024e030       ?State_Fire@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024f030 f   WeaponBlaster.obj
- 0001:0024e330       ?State_Flashlight@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024f330 f   WeaponBlaster.obj
- 0001:0024e3c0       ?Register_rvWeaponBlaster@@YAXXZ 2024f3c0 f   WeaponBlaster.obj
- 0001:0024e3d0       ??_ErvWeaponHyperblaster@@UAEPAXI@Z 2024f3d0 f i WeaponHyperblaster.obj
- 0001:0024e3d0       ??_GrvWeaponShotgun@@UAEPAXI@Z 2024f3d0 f i WeaponShotgun.obj
- 0001:0024e3d0       ??_ErvWeaponBlaster@@UAEPAXI@Z 2024f3d0 f i WeaponBlaster.obj
- 0001:0024e3d0       ??_ErvWeaponShotgun@@UAEPAXI@Z 2024f3d0 f i WeaponShotgun.obj
- 0001:0024e3d0       ??_ErvWeapon@@UAEPAXI@Z    2024f3d0 f i Weapon.obj
- 0001:0024e3d0       ??_GrvWeaponBlaster@@UAEPAXI@Z 2024f3d0 f i WeaponBlaster.obj
- 0001:0024e3d0       ??_ErvWeaponMachinegun@@UAEPAXI@Z 2024f3d0 f i WeaponMachinegun.obj
- 0001:0024e3d0       ??_GrvWeaponRailgun@@UAEPAXI@Z 2024f3d0 f i WeaponRailgun.obj
- 0001:0024e3d0       ??_GrvWeaponHyperblaster@@UAEPAXI@Z 2024f3d0 f i WeaponHyperblaster.obj
- 0001:0024e3d0       ??_GrvWeapon@@UAEPAXI@Z    2024f3d0 f i Weapon.obj
- 0001:0024e3d0       ??_GrvWeaponMachinegun@@UAEPAXI@Z 2024f3d0 f i WeaponMachinegun.obj
- 0001:0024e3d0       ??_ErvWeaponRailgun@@UAEPAXI@Z 2024f3d0 f i WeaponRailgun.obj
+ 0001:0024df60       ?State_Charged@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024ef60 f   WeaponBlaster.obj
+ 0001:0024e020       ?State_Fire@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024f020 f   WeaponBlaster.obj
+ 0001:0024e320       ?State_Flashlight@rvWeaponBlaster@@AAE?AW4stateResult_t@@ABUstateParms_t@@@Z 2024f320 f   WeaponBlaster.obj
+ 0001:0024e3b0       ?Register_rvWeaponBlaster@@YAXXZ 2024f3b0 f   WeaponBlaster.obj
+ 0001:0024e3c0       ??_ErvWeaponHyperblaster@@UAEPAXI@Z 2024f3c0 f i WeaponHyperblaster.obj
+ 0001:0024e3c0       ??_GrvWeaponShotgun@@UAEPAXI@Z 2024f3c0 f i WeaponShotgun.obj
+ 0001:0024e3c0       ??_ErvWeaponBlaster@@UAEPAXI@Z 2024f3c0 f i WeaponBlaster.obj
+ 0001:0024e3c0       ??_ErvWeaponShotgun@@UAEPAXI@Z 2024f3c0 f i WeaponShotgun.obj
+ 0001:0024e3c0       ??_ErvWeapon@@UAEPAXI@Z    2024f3c0 f i Weapon.obj
+ 0001:0024e3c0       ??_GrvWeaponBlaster@@UAEPAXI@Z 2024f3c0 f i WeaponBlaster.obj
+ 0001:0024e3c0       ??_ErvWeaponMachinegun@@UAEPAXI@Z 2024f3c0 f i WeaponMachinegun.obj
+ 0001:0024e3c0       ??_GrvWeaponRailgun@@UAEPAXI@Z 2024f3c0 f i WeaponRailgun.obj
+ 0001:0024e3c0       ??_GrvWeaponHyperblaster@@UAEPAXI@Z 2024f3c0 f i WeaponHyperblaster.obj
+ 0001:0024e3c0       ??_GrvWeapon@@UAEPAXI@Z    2024f3c0 f i Weapon.obj
+ 0001:0024e3c0       ??_GrvWeaponMachinegun@@UAEPAXI@Z 2024f3c0 f i WeaponMachinegun.obj
+ 0001:0024e3c0       ??_ErvWeaponRailgun@@UAEPAXI@Z 2024f3c0 f i WeaponRailgun.obj
  0001:0024e400       ?RegisterClassA@rvWeaponDarkMatterGun@@SAXXZ 2024f400 f   WeaponDarkMatterGun.obj
  0001:0024e490       ?CreateInstance@rvWeaponDarkMatterGun@@SAPAVidClass@@XZ 2024f490 f   WeaponDarkMatterGun.obj
  0001:0024e530       ?GetClassType@rvWeaponDarkMatterGun@@SAAAVidTypeInfo@@XZ 2024f530 f   WeaponDarkMatterGun.obj
@@ -19221,8 +19221,8 @@
  0002:0003cdb8       __real@41fab852            20380db8     Weapon.obj
  0002:0003cdbc       __real@48000000            20380dbc     Weapon.obj
  0002:0003cdc0       ??_C@_0L@PALCELJK@Flashlight?$AA@ 20380dc0     WeaponBlaster.obj
- 0002:0003cdcc       ??_C@_06MDKBLGPP@Charge?$AA@ 20380dcc     WeaponBlaster.obj
- 0002:0003cdd4       ??_C@_04OHLPDOFO@Fire?$AA@ 20380dd4     WeaponBlaster.obj
+ 0002:0003cdcc       ??_C@_04OHLPDOFO@Fire?$AA@ 20380dcc     WeaponBlaster.obj
+ 0002:0003cdd4       ??_C@_06MDKBLGPP@Charge?$AA@ 20380dd4     WeaponBlaster.obj
  0002:0003cddc       ??_C@_07CMFAOAJI@Charged?$AA@ 20380ddc     WeaponBlaster.obj
  0002:0003cde8       ??_7rvWeaponBlaster@@6B@   20380de8     WeaponBlaster.obj
  0002:0003ce30       ??_C@_0BA@CKJKNDFE@rvWeaponBlaster?$AA@ 20380e30     WeaponBlaster.obj

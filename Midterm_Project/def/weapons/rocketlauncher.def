@@ -110,6 +110,8 @@ entityDef weapon_rocketlauncher
  	"fx_muzzleflash"			"effects/weapons/rocketlauncher/muzzleflash.fx"
  	"fx_muzzleflash_world"		"effects/weapons/rocketlauncher/muzzleflash_world.fx"
 	"fx_respawn"				"effects/mp/itemrespawn.fx"
+	"fx_largeexplosion"			"effects/explosions/surface/large_explosion.fx"
+	"fx_camerashake"						"effects/monsters/grunt/gruntcamerashake.fx"
 
 	"snd_acquire"				"pickup_weapon"
 	"snd_quaddamage"			"weapon_quaddamage_fire"

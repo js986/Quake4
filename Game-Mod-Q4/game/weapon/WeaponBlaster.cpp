@@ -126,7 +126,8 @@ bool rvWeaponBlaster::UpdateAttack(void) {
 	// delay then transition to the charge state.
 	if (fireHeldTime != 0) {
 		if (gameLocal.time - fireHeldTime > chargeDelay) {
-			SetState("Charge", 4);
+			SetState("Fire", 0);
+			//SetState("Charge", 4);
 			return true;
 		}
 
@@ -374,7 +375,8 @@ stateResult_t rvWeaponBlaster::State_Charge(const stateParms_t& parms) {
 
 			return SRESULT_WAIT;
 		}
-		SetState("Charged", 4);
+		SetState("Fire", 0);
+		//SetState("Charged", 4);
 		return SRESULT_DONE;
 	}
 	return SRESULT_ERROR;
