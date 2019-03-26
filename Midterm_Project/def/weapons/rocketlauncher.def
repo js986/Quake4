@@ -73,9 +73,9 @@ entityDef weapon_rocketlauncher
 	"inv_start_ammo_rocketlauncher"	"10"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_rocket.tga"
-	"inv_name"					"#str_107409"	
+	"inv_name"					"RYNO" //"#str_107409"	
 
-	"fireRate"					".3" // was .8
+	"fireRate"					".5" // was .8
 	"reloadRate"				".8"
 	"spread"					"0"
 

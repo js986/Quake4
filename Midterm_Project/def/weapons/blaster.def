@@ -79,13 +79,14 @@ entityDef weapon_blaster
 
 	// Firing properties
 	"chargeTime"				".8" 
-	"chargeDelay"				"0" //was .1
+	"chargeDelay"				".1" 
 	"chargeGlow"				"0 .4"
 	"fireRate"					".1" //was .15
 	"spread"					".2"
+	"continuousFire"			"1"
 
-//	"def_projectile"			"projectile_blaster"
-	"def_hitscan"				"hitscan_blaster"
+	"def_projectile"			"projectile_blaster"
+	//"def_hitscan"				"hitscan_blaster"
 	"def_altprojectile"			"projectile_blaster_charged"
 	"ammoType"					"ammo_blaster"
 	"clipSize"					"0"

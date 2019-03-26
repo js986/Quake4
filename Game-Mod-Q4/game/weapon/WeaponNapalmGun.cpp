@@ -500,7 +500,7 @@ stateResult_t WeaponNapalmGun::State_Fire( const stateParms_t& parms ) {
 				return SRESULT_STAGE(STAGE_WAIT);
 			}
 			Attack();
-			exp += 0.5; // the following was added by js986
+			exp += 5; // the following was added by js986
 			if (exp >= total_exp) {
 				idPlayer* player = gameLocal.GetLocalPlayer();
 				level++;

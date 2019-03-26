@@ -20,6 +20,7 @@ This is the main script that is loaded before any level scripts load.
 #include "scripts/common/repair_bot.script"
 #include "scripts/common/strogg_dropship.script"
 
+
 // Map Scripts
 
 #include "scripts/maps/airdefense_intro.script"

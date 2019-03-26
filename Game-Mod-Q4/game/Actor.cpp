@@ -2395,6 +2395,10 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'", damageDefName );
 	}
+	if (idStr::Icmp(this->spawnArgs.GetString("spawnclass"), "idAI") == 0 && idStr::Icmp(inflictor->GetEntityDefName(), "hitscan_railgun") == 0){
+		spawnArgs.SetInt("passive", 1);
+		return;
+	}
 
 	int	damage = damageDef->GetInt( "damage" ) * damageScale;
 	damage = GetDamageForLocation( damage, location );

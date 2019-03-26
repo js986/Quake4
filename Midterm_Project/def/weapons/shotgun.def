@@ -87,7 +87,7 @@ entityDef weapon_shotgun
 	"inv_start_ammo_shotgun"		"10"
 	"inv_item"				"1"
 	"inv_icon"				"gfx/guis/hud/icons/item_shotgun.tga"
-	"inv_name"				"#str_107410"
+	"inv_name"				"Blitz Gun" //"#str_107410"
 
 	"weaponname"				"Shotgun"
 	"def_hitscan"				"hitscan_shotgun_pellet"
@@ -126,7 +126,10 @@ entityDef weapon_shotgun
   	"fx_muzzleflash"			"effects/weapons/shotgun/muzzleflash.fx"		
   	"fx_muzzleflash_world"			"effects/weapons/shotgun/muzzleflash_world.fx"		
 	"fx_respawn"				"effects/mp/itemrespawn.fx"
-	"fx_shake"					"effects/weapons/shotgun/shake.fx"
+	"fx_sparks"				"effects/sparks/sparkshower5.fx"
+	"fx_camerashake"						"effects/monsters/grunt/gruntcamerashake.fx"
+	"fx_burn_particles"					 "effects/monsters/teleport3.fx"
+	"fx_weld_sparks"				"effects/levels/convoy/weld_sparks.fx"
 
 	"def_viewStyle"				"viewStyle_q3_shotgun"
 	"def_viewStyle1"			"viewStyle_shouldered_shotgun"

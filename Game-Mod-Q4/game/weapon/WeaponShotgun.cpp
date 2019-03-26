@@ -21,6 +21,7 @@ public:
 
 protected:
 	int						hitscans;
+	jointHandle_t			t;
 	//Weapon Experience
 	int					exp = 0;
 	int					total_exp = 1500;
@@ -55,7 +56,7 @@ rvWeaponShotgun::Spawn
 */
 void rvWeaponShotgun::Spawn( void ) {
 	hitscans   = spawnArgs.GetFloat( "hitscans" );
-	
+	t = viewAnimator->GetJointHandle(spawnArgs.GetString("joint_view_flash"));
 	SetState( "Raise", 0 );	
 }
 
@@ -180,24 +181,32 @@ stateResult_t rvWeaponShotgun::State_Fire( const stateParms_t& parms ) {
 				idPlayer* player = gameLocal.GetLocalPlayer();
 				if (player && player->hud){
 					if (level == 5) {
-						player->hud->SetStateString("message", "The Shotgun has reached Max Level");
+						player->hud->SetStateString("message", "The Blitz Gun has reached Max Level");
 						player->hud->HandleNamedEvent("Message");
 					}
 					else if (level == 2) {
-						player->hud->SetStateString("message", "The Shotgun has reached Level 2");
+						player->hud->SetStateString("message", "The Blitz Gun has reached Level 2");
 						player->hud->HandleNamedEvent("Message");
 					}
 					else if (level == 3) {
-						player->hud->SetStateString("message", "The Shotgun has reached Level 3");
+						player->hud->SetStateString("message", "The Blitz Gun has reached Level 3");
 						player->hud->HandleNamedEvent("Message");
 					}
 					else if (level == 4) {
-						player->hud->SetStateString("message", "The Shotgun has reached Level 4");
+						player->hud->SetStateString("message", "The Blitz Gun has reached Level 4");
 						player->hud->HandleNamedEvent("Message");
 					}
 				}
 			}
+			//trace_t tr;
+			//gameLocal.TracePoint(owner, tr,playerViewOrigin,playerViewOrigin + playerViewAxis[0],MASK_SHOT_RENDERMODEL, owner);
 			PlayAnim( ANIMCHANNEL_ALL, "fire", 0 );	
+			if (owner == gameLocal.GetLocalPlayer()){
+				viewModel->PlayEffect("fx_camerashake", t, false);
+				viewModel->PlayEffect("fx_burn_particles", t, false);
+				viewModel->PlayEffect("fx_weld_sparks", t, false);
+			}
+			//gameLocal.PlayEffect("fx_sparks", tr.endpos, tr.c.normal.ToMat3(), false,vec3_origin,true,);
 			return SRESULT_STAGE( STAGE_WAIT );
 	
 		case STAGE_WAIT:

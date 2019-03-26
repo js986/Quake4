@@ -512,26 +512,6 @@ void idProjectile::Launch( const idVec3 &start, const idVec3 &dir, const idVec3 
 		PostEventMS( &EV_Remove, 0 );
 	}
 }
-/*
-================
-idProjectile::SpawnZurkon
-================
-*/
-void idProjectile::SpawnZurkon() {
-	idDict robot;
-	idEntity* temp;
-	robot.Set("classname", zurkon.c_str());
-	robot.Set("origin", (physicsObj.GetOrigin()).ToString());
-	robot.SetFloat("angle", (physicsObj.GetAxis()).ToString()[YAW]);
-	robot.Set("name", "Mr.Zurkon");
-	//robot.Set("def_head", "char_marinehead_helmet");
-	//robot.Set("def_persona", "persona_badger");
-	//robot.Set("skin", "skins/models/characters/marine/badger");
-	gameLocal.SpawnEntityDef("char_marine_base",&robot);
-	if (!gameLocal.SpawnEntityDef(zurkon.c_str(), &robot))
-		gameLocal.Printf("Spawn Failed");
-}
-
 
 
 
@@ -660,13 +640,10 @@ bool idProjectile::Collide( const trace_t &collision, const idVec3 &velocity, bo
  	bool		canDamage;
  	
  	hitTeleporter = false;
-	//if (collision.c.material)
-		//SpawnZurkon();
 
 	if ( state == EXPLODED || state == FIZZLED ) {
 		return true;
 	}
-
 	// allow projectiles to hit triggers (teleports)
 	// predict this on a client
 	if( collision.c.contents & CONTENTS_TRIGGER ) {
@@ -787,7 +764,7 @@ bool idProjectile::Collide( const trace_t &collision, const idVec3 &velocity, bo
 // RAVEN END
  
 	//Spawn any impact entities if necessary.
-	SpawnImpactEntities(collision, velocity);
+	//SpawnImpactEntities(collision, velocity);
 
 	//Apply any impact force if the necessary
 	//ApplyImpactForce(ent, collision, dir);
@@ -1031,6 +1008,18 @@ void idProjectile::SpawnImpactEntities(const trace_t& collision, const idVec3 ve
 
 			//Now orient the direction to the surface world orientation.
 			direction = impactAxes * tempDirection;
+			if (idStr::Icmp(impactEntity, "projectile_grenade")) {
+				float angle = (360.0f / 6.0f);
+				idMat3 normalMat = GetPhysics()->GetAxis();
+				idVec3 normal = normalMat[0];
+				idVec3 axis = normalMat[1];
+				normal.Normalize();
+				idMat3 axisMat;
+				axisMat = axis.ToMat3();
+				axisMat.RotateArbitrary(normal, angle * i);
+				direction = axisMat[0];
+				reflectionVelocity = axisMat[0];
+			}
 			spawnProjectile->Launch(origin, direction, reflectionVelocity);
 		}
 	}
@@ -1164,6 +1153,12 @@ idProjectile::Explode
 void idProjectile::Explode( const trace_t *collision, const bool showExplodeFX, idEntity *ignore, const char *sndExplode ) {
 	idVec3		normal, endpos;
 	int			removeTime;
+
+	if (idStr::Icmp(spawnArgs.GetString("type"), "grenademirv")) {
+		idVec3 vel(0.0f, 0.0f, 1.0f);
+
+			SpawnImpactEntities(*collision, vel);
+	}
 
 	if ( state == EXPLODED || state == FIZZLED ) {
 		return;

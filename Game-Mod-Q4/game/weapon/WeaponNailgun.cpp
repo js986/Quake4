@@ -41,7 +41,9 @@ public:
 	void				PostSave				( void );
 
 protected:
-
+	idEntity* entity;
+	const idDeclEntityDef *shieldDef = gameLocal.FindEntityDef("projectile_shield", false);
+	//const idDeclEntityDef *shieldDef = gameLocal.FindEntityDef("monster_gladiator_shield", false);
 	idEntityPtr<idEntity>				guideEnt;
 	int									guideTime;
 	int									guideStartTime;
@@ -61,6 +63,13 @@ protected:
 	int									drumSpeed;
 	int									drumSpeedIdeal;
 	float								drumMultiplier;
+
+	//Experience
+	int					exp = 0;
+	int					total_exp = 1500;
+	int					level = 1;
+	int					num_attacks = 1;
+	float				pow = 1.0f;
 
 	virtual void		OnLaunchProjectile		( idProjectile* proj );
 	
@@ -653,7 +662,58 @@ stateResult_t rvWeaponNailgun::State_Fire( const stateParms_t& parms ) {
 				return SRESULT_DONE;
 			}
 			nextAttackTime = gameLocal.time;
-			
+			/*
+			if (shieldDef && owner == gameLocal.GetLocalPlayer()) {
+				gameLocal.SpawnEntityDef(shieldDef->dict, &entity);
+				entity->GetPhysics()->SetClipMask(0);
+				entity->GetPhysics()->SetContents(CONTENTS_RENDERMODEL);
+				entity->SetShaderParm(SHADERPARM_MODE, 0);
+				//owner->Attach(entity);
+				for (int i = 0; i < num_attacks; i++){
+					idProjectile* proj = static_cast<idProjectile *> (entity);
+					idVec3 muzzleOrigin = playerViewOrigin;
+					idVec3 startOffset;
+					idVec3 dir;
+					idVec3 dirOffset;
+					float spreadRad = DEG2RAD(spread);
+					float ang = idMath::Sin(spreadRad * gameLocal.random.RandomFloat());
+					float spin = (float)DEG2RAD(360.0f) * gameLocal.random.RandomFloat();
+					spawnArgs.GetVector("dirOffset", "0 0 0", dirOffset);
+					spawnArgs.GetVector("startOffset", "0 0 0", startOffset);
+					dir = playerViewAxis[0] + playerViewAxis[2] * (ang * idMath::Sin(spin)) - playerViewAxis[1] * (ang * idMath::Cos(spin));
+					dir += dirOffset;
+					proj->Create(owner, muzzleOrigin + startOffset, dir, NULL);
+					proj->Launch(muzzleOrigin, dir, owner->weapon->pushVelocity, 0.0f, 1.0f);
+				}
+			}
+			*/
+			Attack ( false, num_attacks, spread, 0.0f, pow );
+			exp += 100; // the following was added by js986
+			if (exp >= total_exp) {
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				level++;
+				total_exp = total_exp * 2;
+				num_attacks = num_attacks + 2;
+				pow += 1.0f;
+				if (player && player->hud){
+					if (level == 5) {
+						player->hud->SetStateString("message", "The Holoshield Launcher has reached Max Level");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 2) {
+						player->hud->SetStateString("message", "The Holoshield Launcher has reached Level 2");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 3) {
+						player->hud->SetStateString("message", "The Holoshield Launcher has reached Level 3");
+						player->hud->HandleNamedEvent("Message");
+					}
+					else if (level == 4) {
+						player->hud->SetStateString("message", "The Holoshield Launcher has reached Level 4");
+						player->hud->HandleNamedEvent("Message");
+					}
+				}
+			}
 			return SRESULT_STAGE ( STAGE_FIRE );
 			
 		case STAGE_FIRE:
@@ -667,10 +727,25 @@ stateResult_t rvWeaponNailgun::State_Fire( const stateParms_t& parms ) {
 			}
 
 			if ( wsfl.zoom ) {				
-				Attack ( true, 1, spread, 0.0f, 1.0f );
+				//Attack ( true, 1, spread, 0.0f, 1.0f );
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			} else {
-				Attack ( false, 1, spread, 0.0f, 1.0f );
+			}
+			else {
+				//Attack ( false, 1, spread, 0.0f, 1.0f );
+				//args.Set("classname", spawnArgs.GetString("def_shield"));
+
+
+				//shield = entity;
+				//entity->GetPhysics()->SetClipMask(0);
+				//entity->GetPhysics()->SetContents(CONTENTS_RENDERMODEL);
+
+				//entity->GetPhysics()->GetClipModel()->SetOwner(owner);
+				//idActor::Attach(entity);
+				StartSound("snd_shield_loop", SND_CHANNEL_ITEM, 0, false, NULL);
+
+				//shield->Show(); 
+
+			
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			}
 			

@@ -116,14 +116,14 @@ entityDef weapon_nailgun
 	"inv_start_ammo_nailgun"			"50"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_nailgun"
-	"inv_name"					"#str_107407"
+	"inv_name"					"Holoshield Launcher" //"#str_107407"
 
 	"gui"						"guis/weapons/nailgun_ammo.gui"
 	"gui_zoom"					"guis/weapons/nailgun_scope.gui"
 
 	"mtr_icon"					"gfx/guis/hud/icons/gun_nailgun"
 
-	"def_projectile"			"projectile_nail"
+	"def_projectile"			"projectile_shield"//"projectile_nail"
 	"def_altprojectile"			"projectile_nail_seek"
 	"ammoType"					"ammo_nailgun"
 	"ammoRequired"				"1"
@@ -162,6 +162,7 @@ entityDef weapon_nailgun
 	"snd_fireStereo"			"weapon_nailgun_fire_stereo"
 	"snd_acquire"				"pickup_weapon"
 	"snd_noAmmo"				"weapon_nailgun_dryfire"
+	"snd_shield_loop"					"gladiator_shield_loop"
 
   	"fx_muzzleflash"			"effects/weapons/nailgun/muzzleflash.fx"
   	"fx_muzzleflash_world"		"effects/weapons/nailgun/muzzleflash_world.fx"
@@ -473,6 +474,31 @@ entityDef projectile_nail_seek
 	"turn_max"					"1800"
 	"turn_accel"				".5"
 	"clamp_dist"				"1001"
+}
+entityDef projectile_shield
+{
+	"spawnclass"				"idProjectile"
+	"inherit"					"monster_gladiator_shield"
+	"mins"						"-8 -8 -8"
+	"maxs"						"8 8 8"
+	"noshadows"					"1"
+	"clipmask_largeshot"		"0"
+	"def_sheild"				"monster_gladiator_shield"
+	//"model"						"models/monsters/gladiator/shield.lwo"
+	//"takeBounceDamage"			"1"
+	"health"					"100"
+	"speed"						"700"
+	"gravity"					"0.5"
+	"fuse"						"10"
+	//"joint"						"shield_jt"
+	"detonate_on_fuse"			"1"
+	"detonate_on_death"			"0"
+	"detonate_on_world"			"0"
+	"detonate_on_actor"			"0"
+	"detonate_on_bounce"		"0"
+
+	"fx_block_effect"					"effects/monsters/gladiator/energyshield.fx"
+	"fx_shield"							"effects/monsters/gladiator/shield2.fx"
 }
 
 //--------------------------------------------------------------------------------------------------------------------

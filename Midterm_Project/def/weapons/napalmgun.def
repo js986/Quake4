@@ -72,7 +72,7 @@ entityDef weapon_napalmgun
 
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_fire.tga"
-	"inv_name"					"Napalm Launcher"	
+	"inv_name"					"Pyrocitor" //"Napalm Launcher"	
 
 	"fireRate"					".8" //was .8
 //	"reloadRate"				".1"

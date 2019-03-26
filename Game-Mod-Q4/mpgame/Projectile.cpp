@@ -830,6 +830,8 @@ bool idProjectile::Collide( const trace_t &collision, const idVec3 &velocity, bo
 		if ( !bounce && collision.c.material && (collision.c.material->GetSurfaceFlags() & SURF_BOUNCE) ) {
 			bounce = !projectileFlags.detonate_on_bounce;
 		}
+		if (ent->GetEntityDefName() == "projectile_shield")
+			bounce = !projectileFlags.detonate_on_bounce;
 		
 		if ( bounce ) {
 			if ( bounceCount != -1 ) {
@@ -1202,80 +1204,89 @@ void idProjectile::Event_EmitDamage ( idEntity* ignore ) {
 idProjectile::Explode
 ================
 */
-void idProjectile::Explode( const trace_t *collision, const bool showExplodeFX, idEntity *ignore, const char *sndExplode ) {
+void idProjectile::Explode(const trace_t *collision, const bool showExplodeFX, idEntity *ignore, const char *sndExplode) {
 	idVec3		normal, endpos;
 	int 		removeTime;
 
-	if ( state == EXPLODED || state == FIZZLED ) {
+	if (state == EXPLODED || state == FIZZLED) {
 		return;
 	}
 
-	if ( predictedProjectiles && state == IMPACTED ) {
+	if (predictedProjectiles && state == IMPACTED) {
 		return;
-	} 
-
-	CancelEvents( &EV_EmitDamage );
-
-	if ( spawnArgs.GetVector( "detonation_axis", "", normal ) ) {
-		GetPhysics()->SetAxis( normal.ToMat3() );
-	} else {
-		normal = collision ? collision->c.normal : idVec3( 0, 0, 1 );
 	}
-	endpos = ( collision ) ? collision->endpos : GetPhysics()->GetOrigin();
-	
-	removeTime = spawnArgs.GetInt( "remove_time", "1500" );
 
+	CancelEvents(&EV_EmitDamage);
+
+	if (spawnArgs.GetVector("detonation_axis", "", normal)) {
+		GetPhysics()->SetAxis(normal.ToMat3());
+	}
+	else {
+		normal = collision ? collision->c.normal : idVec3(0, 0, 1);
+	}
+	endpos = (collision) ? collision->endpos : GetPhysics()->GetOrigin();
+
+	removeTime = spawnArgs.GetInt("remove_time", "1500");
+
+	if (idStr::Icmp(GetEntityDefName(), "projectile_big_grenade") == 0) {
+		trace_t t = trace_t();
+		//gameLocal.Printf("Something Should Happen");
+		SpawnImpactEntities(t, endpos);
+	}
 	// play sound
-	StopSound( SND_CHANNEL_BODY, false );
-	StartSound( sndExplode, SND_CHANNEL_BODY, 0, false, NULL );
+	StopSound(SND_CHANNEL_BODY, false);
+	StartSound(sndExplode, SND_CHANNEL_BODY, 0, false, NULL);
 
 	idVec3 fxDir;
-	if ( physicsObj.GetGravityNormal( ) != vec3_zero ) {
-		fxDir = -physicsObj.GetGravityNormal( );
-	} else { 
-		fxDir = -physicsObj.GetLinearVelocity( );
-		fxDir.Normalize( );
+	if (physicsObj.GetGravityNormal() != vec3_zero) {
+		fxDir = -physicsObj.GetGravityNormal();
+	}
+	else {
+		fxDir = -physicsObj.GetLinearVelocity();
+		fxDir.Normalize();
 	}
 
-	if ( predictedProjectiles ) {
-		if ( ( gameLocal.isClient || gameLocal.isListenServer ) && !playedDamageEffect ) {
-			PlayDetonateEffect( endpos, fxDir.ToMat3() );
+	if (predictedProjectiles) {
+		if ((gameLocal.isClient || gameLocal.isListenServer) && !playedDamageEffect) {
+			PlayDetonateEffect(endpos, fxDir.ToMat3());
 		}
-	} else if ( showExplodeFX ) {
-		PlayDetonateEffect( endpos, fxDir.ToMat3() );
+	}
+	else if (showExplodeFX) {
+		PlayDetonateEffect(endpos, fxDir.ToMat3());
 	}
 
 	// Stop the fly effect without destroying particles to ensure the trail within can persist.
-	StopEffect( "fx_fly" );	
-	
+	StopEffect("fx_fly");
+
 	// Stop the remaining particles
-	StopAllEffects( );
+	StopAllEffects();
 
 	Hide();
 	FreeLightDef();
 
-	GetPhysics()->SetOrigin( GetPhysics()->GetOrigin() + 8.0f * normal );
+	GetPhysics()->SetOrigin(GetPhysics()->GetOrigin() + 8.0f * normal);
 
 	fl.takedamage = false;
-	physicsObj.SetContents( 0 );
+	physicsObj.SetContents(0);
 	physicsObj.PutToRest();
 
-	if ( predictedProjectiles ) {
+	if (predictedProjectiles) {
 		state = showExplodeFX ? EXPLODED : IMPACTED;
-	} else {
+	}
+	else {
 		state = EXPLODED;
 	}
 
-	if ( gameLocal.isClient ) {
+	if (gameLocal.isClient) {
 		return;
 	}
 
- 	// alert the ai
- 	gameLocal.AlertAI( owner.GetEntity() );
+	// alert the ai
+	gameLocal.AlertAI(owner.GetEntity());
 
 	// bind the projectile to the impact entity if necesary
-	if ( collision && gameLocal.entities[collision->c.entityNum] && spawnArgs.GetBool( "bindOnImpact" ) ) {
-		Bind( gameLocal.entities[collision->c.entityNum], true );
+	if (collision && gameLocal.entities[collision->c.entityNum] && spawnArgs.GetBool("bindOnImpact")) {
+		Bind(gameLocal.entities[collision->c.entityNum], true);
 	}
 
 	if ( predictedProjectiles ) {
