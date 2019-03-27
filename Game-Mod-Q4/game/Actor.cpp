@@ -2395,9 +2395,12 @@ void idActor::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir
 	if ( !damageDef ) {
 		gameLocal.Error( "Unknown damageDef '%s'", damageDefName );
 	}
-	if (idStr::Icmp(this->spawnArgs.GetString("type"), "monster") == 0 && idStr::Icmp(inflictor->GetEntityDefName(), "hitscan_railgun") == 0){
-		spawnArgs.SetInt("passive", 1);
-		return;
+	const idDict *railgundmg = gameLocal.FindEntityDefDict("damage_railgun", false);
+	if (idStr::Icmp(this->spawnArgs.GetString("type"), "monster") == 0 && damageDef == railgundmg){
+		//gameLocal.Printf("something should happen");
+		spawnArgs.SetInt("tactical_ranged", 0);
+		spawnArgs.SetInt("tactical_rush", 0);
+		//return;
 	}
 
 	int	damage = damageDef->GetInt( "damage" ) * damageScale;

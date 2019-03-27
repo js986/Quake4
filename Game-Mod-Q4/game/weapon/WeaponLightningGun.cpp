@@ -75,7 +75,7 @@ protected:
 	idVec3								chainLightningRange;
 	//Experience
 	int					exp = 0;
-	int					total_exp = 1000;
+	int					total_exp = 5000;
 	int					level = 1;
 	int					num_attacks = 1;
 	float				pow = 1.0f;
@@ -323,7 +323,7 @@ void rvWeaponLightningGun::Think ( void ) {
 		
 		nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 		Attack ( currentPath.target, dir, power );
-		exp += 50; // the following was added by js986
+		exp += 20; // the following was added by js986
 		if (exp >= total_exp) {
 			level++;
 			total_exp = total_exp * 2;
