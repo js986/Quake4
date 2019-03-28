@@ -13,6 +13,6 @@ Napalm Gun -> Pyrocitor<br />
 Gauntlet -> Bomb Glove<br />
 <br />
 How To Install: <br />
-Take the file called "Midterm_Project" and put it into your Quake 4 Folder that contains Quake4.exe. Use the provided shortcut to automaticall launch the mod. To create your own shortcut create a shortcut and open Properties.
+Take the file called "Midterm_Project" and put it into your Quake 4 Folder that contains Quake4.exe. Use the provided shortcut to automatically launch the mod. To create your own shortcut create a shortcut and open Properties.
 Once there at the end of the target line add the following: +set fs_game midterm_project  +set r_fullscreen 0 +disconnect<br />
 The Enemies now also spawn in waves and the weapons level up.
