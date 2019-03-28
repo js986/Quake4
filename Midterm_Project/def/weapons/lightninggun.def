@@ -79,7 +79,7 @@ entityDef weapon_lightninggun
 	"inv_start_ammo_lightninggun"		"100"
 	"inv_item"							"1"
 	"inv_icon"							"gfx/guis/hud/icons/item_lightning.tga"
-	"inv_name"							"#str_107405"
+	"inv_name"							"Tesla Claw" //"#str_107405"
 
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_lightninggun"
 	"ammoType"					"ammo_lightninggun"

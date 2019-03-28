@@ -117,7 +117,6 @@ rvWeaponLightningGun::~rvWeaponLightningGun
 */
 rvWeaponLightningGun::~rvWeaponLightningGun( void ) {
 	int i;
-	
 	if ( trailEffectView ) {
 		trailEffectView->Stop( );
 	}	
@@ -143,7 +142,7 @@ void rvWeaponLightningGun::Spawn( void ) {
 	nextCrawlTime	= 0;
 
 	chainLightning.Clear( );
-	
+	owner->GiveItem("weaponmod_lightninggun_chain");
 	// get hitscan range for our firing
 	range = weaponDef->dict.GetFloat( "range", "10000" );
 
@@ -178,7 +177,6 @@ rvWeaponLightningGun::Save
 */
 void rvWeaponLightningGun::Save	( idSaveGame* savefile ) const {
 	int i;
-
 	// Lightning Tubes
 	for ( i = 0; i < LIGHTNINGGUN_NUM_TUBES; i ++ ) {
 		tubeEffects[i].Save ( savefile );

@@ -90,14 +90,15 @@ entityDef weapon_machinegun
 	"inv_start_ammo_machinegun"		"40"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_machinegun.tga"
-	"inv_name"					"#str_107406"
+	"inv_name"					"Warmonger" //"#str_107406"
 
 	"fireRate"					".1"
 	"spread"					"2"
 
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_machinegun"
-	"def_hitscan"				"hitscan_bullet"
-	"def_althitscan"			"hitscan_zoomed_bullet"
+	//"def_hitscan"				"hitscan_bullet"
+	//"def_althitscan"			"hitscan_zoomed_bullet"
+	"def_projectile"			"projectile_rockets"
 	
 	"ammoType"					"ammo_machinegun"
 	"ammoRequired"				"1"
@@ -373,6 +374,54 @@ entityDef hitscan_zoomed_bullet
 	"def_damage"				"damage_machinegun_zoom"
 	"def_damage_flesh"			"damage_machinegun_zoom_flesh"
 }
+
+entityDef projectile_rockets
+{
+"spawnclass"				"idProjectile"
+	"size"						"7 7 7"
+	"cone"						"2"
+	"noshadows"					"1"
+	"clipmask_largeshot"		"1"
+								
+	"model"						"models/weapons/rocketlauncher/rocket.lwo"
+	"def_damage"				"damage_machinegun"
+	//"def_splash_damage"			"damage_rocketSplash"
+																											
+	"speed"						"900"
+	"fuse"						"6"
+	"push"						"48000"
+	
+							
+	"detonate_on_fuse"			"1"
+	"detonate_on_death"			"0"
+	"detonate_on_world"			"1"
+	"detonate_on_actor"			"1"
+	"detonate_on_bounce"		"1"
+								
+	"impact_gib"				"1"								
+	"decal_size"				"75"
+
+	"fx_fly"				"effects/weapons/rocketlauncher/fly.fx"
+	"fx_fly_mp"				"effects/weapons/rocketlauncher/fly_mp.fx"
+	"fx_fly_mp_low"			"effects/weapons/rocketlauncher/fly_mp_low.fx"
+	"fx_detonate"				"effects/weapons/rocketlauncher/detonate.fx"
+	"fx_detonate_mp"			"effects/weapons/rocketlauncher/detonate_mp.fx"
+	"fx_impact"				"effects/weapons/rocketlauncher/impact.fx"
+	"fx_impact_mp"				"effects/weapons/rocketlauncher/impact_mp.fx"
+	"fx_impact_water"			"effects/ambient/splash_med.fx"
+	"fx_impact_rock"			"effects/weapons/rocketlauncher/impact_concrete.fx"
+	"fx_impact_rock_mp"			"effects/weapons/rocketlauncher/impact_mp.fx"
+	"fx_impact_concrete"			"effects/weapons/rocketlauncher/impact_concrete.fx"
+	"fx_impact_concrete_mp"			"effects/weapons/rocketlauncher/impact_mp.fx"
+	
+	"snd_fly"				"player_rocketlauncher_fly"
+
+	"friendly_impact"			"1"
+	
+	"fx_teleport_enter"		"effects/mp/item_teleport.fx"
+	"fx_teleport"			"effects/mp/item_teleport.fx"
+}
+
 
 //---------------------------------------------------------------
 // SP - normal

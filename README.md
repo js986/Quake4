@@ -2,10 +2,13 @@
 Mod for Quake 4 that changes the weapons to weapons from the Ratchet and Clank series <br />
 Weapon Modifications:<br />
 Blaster -> Automatic Blaster<br />
+Machine Gun ->  Warmonger<br />
 Shotgun ->  Blitz Gun<br />
+HyperBlaster -> Cloaker<br />
 Grenade Launcher -> Bouncer<br />
 Nailgun -> Holoshield Launcher<br />
 Rocket Launcher -> RYNO<br />
+Lightninggun -> Tesla Coil<br />
 Napalm Gun -> Pyrocitor<br />
 Gauntlet -> Bomb Glove<br />
 <br />

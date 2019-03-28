@@ -13,7 +13,7 @@ public:
 	CLASS_PROTOTYPE( rvWeaponHyperblaster );
 
 	rvWeaponHyperblaster ( void );
-
+	~rvWeaponHyperblaster(void);
 	virtual void			Spawn				( void );
 	void					Save				( idSaveGame *savefile ) const;
 	void					Restore				( idRestoreGame *savefile );
@@ -54,7 +54,14 @@ rvWeaponHyperblaster::rvWeaponHyperblaster
 */
 rvWeaponHyperblaster::rvWeaponHyperblaster ( void ) {
 }
-
+/*
+================
+rvWeaponHyperblaster::~rvWeaponHyperblaster
+================
+*/
+rvWeaponHyperblaster::~rvWeaponHyperblaster(void) {
+	owner->ClearPowerup(3);
+}
 /*
 ================
 rvWeaponHyperblaster::Spawn
@@ -238,6 +245,7 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 			SpinUp ( );
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			Attack ( false, num_attacks, spread, 0, pow );
+			owner->GiveItem("powerup_invisibility");
 			semiauto++;
 			exp += 20; // the following was added by js986
 			if (exp >= total_exp) {
@@ -284,6 +292,7 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 				return SRESULT_DONE;
 			}
 			if ( (!wsfl.attack || !AmmoInClip() || wsfl.lowerWeapon) && AnimDone ( ANIMCHANNEL_ALL, 0 ) ) {
+				//owner->ClearPowerup(3);
 				SetState ( "Idle", 0 );
 				return SRESULT_DONE;
 			}		

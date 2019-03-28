@@ -85,7 +85,7 @@ entityDef weapon_hyperblaster
 	"inv_weapon"				"weapon_hyperblaster"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_hyperblaster.tga"
-	"inv_name"					"#str_107404"	
+	"inv_name"					"Cloaker" //"#str_107404"	
 
 	"weaponname"				"HyperBlaster"
 	"ammoType"					"ammo_hyperblaster"
